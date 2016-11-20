@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
+
 int		ft_strcmp(char *s1, char *s2)
 {
 	int		count;
@@ -27,14 +29,17 @@ int		ft_strcmp(char *s1, char *s2)
 	{
 		return (-1);
 	}
-	return (10);
+	return (0);
 }
 
 int	main(void)
 {
-	char	*s1 = "Hello";
-	char	*s2 = "Hellaa";
-
-	return (ft_strcmp(s1, s2));
+	char	*s1 = "Helloo";
+	char	*s2 = "Helol";
+	int	ret;
+	
+	ret = (ft_strcmp(s1, s2));
+	printf(" --- main return value : %i  --- \n", ret);
+	return (ret); 
 }
 
