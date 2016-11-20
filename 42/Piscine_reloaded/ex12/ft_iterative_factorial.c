@@ -10,16 +10,16 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_iterative_factorial(int	nb)
+int		ft_iterative_factorial(int nb)
 {
+	int		count;
+
 	if (nb == 0)
 	{
 		return (1);
 	}
 	else if (nb > 0)
 	{
-		int	count;
-
 		count = nb - 1;
 		while (count > 1)
 		{

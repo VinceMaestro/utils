@@ -6,20 +6,33 @@
 /*   By: vpetit <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/08 10:31:04 by vpetit            #+#    #+#             */
-/*   Updated: 2016/11/08 10:31:26 by vpetit           ###   ########.fr       */
+/*   Updated: 2016/11/16 19:01:50 by vpetit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
 
-#include <stdio.h>
-
-
-
-int main()
+char	*ft_strdup(char *src)
 {
-	int	fact;
+	char	*src_copy;
+	int		src_len;
+	int		i;
 
-	fact = ft_iterative_factorial(nb);
-
-	printf("%i\n", fact);
+	src_len = 0;
+	i = 0;
+	while (src[src_len] != '\0')
+	{
+		src_len += 1;
+	}
+	src_copy = (char*)malloc(sizeof(*src_copy) * (src_len + 1));
+	if (src_copy != NULL)
+	{
+		while (i < src_len)
+		{
+			src_copy[i] = src[i];
+			i += 1;
+		}
+		src_copy[i] = '\0';
+	}
+	return (src_copy);
 }

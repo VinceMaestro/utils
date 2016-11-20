@@ -6,7 +6,7 @@
 /*   By: vpetit <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/16 23:33:49 by vpetit            #+#    #+#             */
-/*   Updated: 2016/11/19 00:01:53 by vpetit           ###   ########.fr       */
+/*   Updated: 2016/11/19 12:09:11 by vpetit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,4 +27,3 @@ int		ft_display_file(char *argv)
 	lseek(open_fd, -text_len, SEEK_END);
 	return (ft_aff_content(open_fd, text_len));
 }
-

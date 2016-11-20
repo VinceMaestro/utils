@@ -6,18 +6,21 @@
 /*   By: vpetit <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/07 16:09:31 by vpetit            #+#    #+#             */
-/*   Updated: 2016/11/07 16:09:39 by vpetit           ###   ########.fr       */
+/*   Updated: 2016/11/19 14:32:22 by vpetit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_print_alphabet()
+int		ft_putchar(char c);
+
+void	ft_print_alphabet(void)
 {
-	char	currentLetter;
-	currentLetter = 97;
-	while (currentLetter != 122)
+	char	current_lletter;
+
+	current_letter = 97;
+	while (current_letter != 122)
 	{
-		ft_putchar(currentLetter);
-		currentLetter += 1;
+		ft_putchar(current_letter);
+		current_letter += 1;
 	}
 	ft_putchar('\n');
 }

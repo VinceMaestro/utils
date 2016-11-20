@@ -1,26 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_range.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vpetit <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/07 20:34:13 by vpetit            #+#    #+#             */
-/*   Updated: 2016/11/19 15:02:10 by vpetit           ###   ########.fr       */
+/*   Created: 2016/11/15 21:17:59 by vpetit            #+#    #+#             */
+/*   Updated: 2016/11/19 15:27:13 by vpetit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_putstr(char c);
+int		ft_putchar(char c);
 
-void	ft_putstr(char *str)
+int		*ft_range(int min, int max)
 {
-	int		count;
+	int		*value_range;
+	int		cpt;
 
-	count = 0;
-	while (str[count])
+	cpt = 0;
+	if (min >= max)
 	{
-		ft_putchar(str[count]);
-		count += 1;
+		value_range = NULL;
 	}
-	ft_putchar('\n');
+	else
+	{
+		value_range = (int*)malloc(sizeof(*value_range) * (max - min));
+		while (cpt < max - min)
+		{
+			value_range[cpt] = min + cpt;
+			ft_putnbr(value_range[cpt]);
+			cpt += 1;
+		}
+	}
+	free(value_range);
+	return (value_range);
 }

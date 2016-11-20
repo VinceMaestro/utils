@@ -6,18 +6,18 @@
 /*   By: vpetit <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/16 23:36:09 by vpetit            #+#    #+#             */
-/*   Updated: 2016/11/18 20:55:05 by vpetit           ###   ########.fr       */
+/*   Updated: 2016/11/19 12:10:05 by vpetit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIB_FT_DISPLAY_FILE_H
 # define LIB_FT_DISPLAY_FILE_H
 
-#include <sys/types.h>
-#include <sys/stat.h>
-#include <sys/uio.h>
-#include <unistd.h>
-#include <fcntl.h>
+# include <sys/types.h>
+# include <sys/stat.h>
+# include <sys/uio.h>
+# include <unistd.h>
+# include <fcntl.h>
 
 int		ft_putchar(char c);
 int		ft_putstr(char *str);

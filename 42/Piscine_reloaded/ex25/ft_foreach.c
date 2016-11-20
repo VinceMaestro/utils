@@ -1,26 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_foreach.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vpetit <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/07 20:34:13 by vpetit            #+#    #+#             */
-/*   Updated: 2016/11/19 15:02:10 by vpetit           ###   ########.fr       */
+/*   Created: 2016/11/16 18:03:35 by vpetit            #+#    #+#             */
+/*   Updated: 2016/11/16 18:03:39 by vpetit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_putstr(char c);
-
-void	ft_putstr(char *str)
+void	ft_foreach(int *tab, int lenght, void (*f)(int))
 {
-	int		count;
+	int		cpt;
 
-	count = 0;
-	while (str[count])
+	cpt = 0;
+	while (cpt < lenght)
 	{
-		ft_putchar(str[count]);
-		count += 1;
+		f(tab[cpt]);
+		cpt += 1;
 	}
-	ft_putchar('\n');
 }

@@ -1,26 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_abs.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vpetit <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/07 20:34:13 by vpetit            #+#    #+#             */
-/*   Updated: 2016/11/19 15:02:10 by vpetit           ###   ########.fr       */
+/*   Created: 2016/11/15 21:54:46 by vpetit            #+#    #+#             */
+/*   Updated: 2016/11/16 19:00:03 by vpetit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_putstr(char c);
-
-void	ft_putstr(char *str)
-{
-	int		count;
-
-	count = 0;
-	while (str[count])
-	{
-		ft_putchar(str[count]);
-		count += 1;
-	}
-	ft_putchar('\n');
-}
+#ifndef FT_ABS_H
+# define FT_ABS_H
+# define ABS(Value)	((Value) < 0 ? - (Value) : (Value))
+#endif

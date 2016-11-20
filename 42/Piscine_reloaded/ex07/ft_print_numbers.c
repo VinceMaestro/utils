@@ -6,18 +6,21 @@
 /*   By: vpetit <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/07 16:36:53 by vpetit            #+#    #+#             */
-/*   Updated: 2016/11/07 16:36:58 by vpetit           ###   ########.fr       */
+/*   Updated: 2016/11/19 15:01:09 by vpetit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_print_numbers()
+int		ft_putchar(char c);
+
+void	ft_print_numbers(void)
 {
-	char	currentNumber;
-	currentNumber = 48;
-	while (currentNumber != 58)
+	char	current_number;
+
+	current_number = 48;
+	while (current_number != 58)
 	{
-		ft_putchar(currentNumber);
-		currentNumber += 1;
+		ft_putchar(current_number);
+		current_number += 1;
 	}
 	ft_putchar('\n');
 }
