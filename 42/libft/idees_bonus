@@ -1,0 +1,5 @@
+// Return premier elem d'une list
+ft_first_elem_of_list(int* or char*)
+
+// Permettre un polymorphisme parametrique
+ft_type_polymorphic

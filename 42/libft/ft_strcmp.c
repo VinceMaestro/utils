@@ -1,37 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vpetit <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/07 16:55:31 by vpetit            #+#    #+#             */
-/*   Updated: 2016/11/07 16:55:35 by vpetit           ###   ########.fr       */
+/*   Created: 2016/11/07 21:04:18 by vpetit            #+#    #+#             */
+/*   Updated: 2016/11/07 21:04:20 by vpetit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-int	ft_putchar(char c)
+int		ft_strcmp(char *s1, char *s2)
 {
-	write(1, &c, 1);
-	return (0);
-}
+	int		count;
 
-void ft_putstr(void *str)
-{
-	char *buff;
-	buff = &str;
-	int	i;
-	i = 0;
-	while (buff)
+	count = 0;
+	while (s1[count] && s2[count])
 	{
-		ft_putchar(buff);
-		buff += 1;
+		count += 1;
 	}
-}
-
-int main()
-{
-	ft_putstr("hello");
+	if (s1[count])
+	{
+		return (1);
+	}
+	else if (s2[count])
+	{
+		return (-1);
+	}
+	else
+	{
+		return (0);
+	}
 }
