@@ -1,31 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vpetit <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/07 21:04:18 by vpetit            #+#    #+#             */
-/*   Updated: 2016/11/07 21:04:20 by vpetit           ###   ########.fr       */
+/*   Created: 2016/11/07 16:32:46 by vpetit            #+#    #+#             */
+/*   Updated: 2016/11/07 16:32:50 by vpetit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_strcmp(char *s1, char *s2)
-{
-	int		count;
+#include <unistd.h>
 
-	count = 0;
-	while ((s1[count] == s2[count]) && (s1[count] != '\0'))
-	{
-		count += 1;
-	}
-	if (s1[count] < s2[count])
-	{
-		return (1);
-	}
-	else if (s1[count] > s2[count])
-	{
-		return (-1);
-	}
+int	ft_putchar(char c)
+{
+	write(1, &c, 1);
 	return (0);
 }

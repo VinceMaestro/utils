@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_putchar(char c);
+#include <stdlib.h>
 
 int		*ft_range(int min, int max)
 {
@@ -24,14 +24,24 @@ int		*ft_range(int min, int max)
 	}
 	else
 	{
-		value_range = (int*)malloc(sizeof(*value_range) * (max - min));
+		value_range = (int*)malloc(sizeof(*value_range) * (max - min + 1));
 		while (cpt < max - min)
 		{
 			value_range[cpt] = min + cpt;
-			ft_putnbr(value_range[cpt]);
 			cpt += 1;
 		}
+	value_range[cpt] = NULL;
 	}
-	free(value_range);
 	return (value_range);
+	//free(value_range);
+}
+
+int		main(void)
+{
+	int	*ptr;
+
+	ptr = ft_range(30, 40);
+	//free(ptr);
+	free(ft_range(30, 40));
+	return (ptr[9]);
 }
