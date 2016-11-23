@@ -6,7 +6,7 @@
 /*   By: vpetit <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/16 23:33:49 by vpetit            #+#    #+#             */
-/*   Updated: 2016/11/19 12:09:11 by vpetit           ###   ########.fr       */
+/*   Updated: 2016/11/23 18:32:42 by vpetit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,31 @@
 int		ft_display_file(char *argv)
 {
 	int		open_fd;
-	int		text_len;
+	char	buffer[1];
+	int		end;
 
+	end = 0;
 	open_fd = open(argv, O_RDWR);
 	if (open_fd == -1)
 	{
 		ft_print_error("open file () failed \n");
 		return (-1);
 	}
-	text_len = lseek(open_fd, +0, SEEK_END);
-	lseek(open_fd, -text_len, SEEK_END);
-	return (ft_aff_content(open_fd, text_len));
+	while (end == 0)
+	{
+		if (read(open_fd, buffer, 1) != 0)
+		{
+			ft_putstr(buffer);
+		}
+		else	
+		{
+			end = 1;
+		}
+	}
+	if (close(open_fd) == -1)
+	{
+		ft_print_error("close file () failed \n");
+		return (-1);
+	}
+	return (0);
 }

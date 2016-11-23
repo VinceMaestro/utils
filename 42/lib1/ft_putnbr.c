@@ -1,19 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vpetit <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/07 16:32:46 by vpetit            #+#    #+#             */
-/*   Updated: 2016/11/07 16:32:50 by vpetit           ###   ########.fr       */
+/*   Created: 2016/11/23 18:00:23 by vpetit            #+#    #+#             */
+/*   Updated: 2016/11/23 18:00:27 by vpetit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+int		ft_putchar(char c);
 
-int	ft_putchar(char c)
+int		ft_putnbr(int nbr)
 {
-	write(1, &c, 1);
+	if (nbr % 10 != nbr)
+	{
+		ft_putnbr(nbr / 10);
+	}
+	ft_purchar(48 + (nbr % 10));
 	return (0);
 }

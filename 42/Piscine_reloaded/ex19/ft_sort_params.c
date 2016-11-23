@@ -5,79 +5,89 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: vpetit <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/08 00:43:51 by vpetit            #+#    #+#             */
-/*   Updated: 2016/11/19 15:03:21 by vpetit           ###   ########.fr       */
+/*   Created: 2016/11/23 04:03:03 by vpetit            #+#    #+#             */
+/*   Updated: 2016/11/23 04:06:18 by vpetit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int		ft_putchar(char c);
 
-void	ft_swap(int general_index, char **argv)
+void	ft_print_params(int argc, char **argv)
+{
+	int		count;
+	int		letter_count;
+
+	count = 1;
+	while (argc > count)
+	{
+		letter_count = 0;
+		while ((argv[count])[letter_count])
+		{
+			ft_putchar((argv[count])[letter_count]);
+			letter_count += 1;
+		}
+		ft_putchar('\n');
+		count += 1;
+	}
+}
+
+void	ft_swap(int a, int b, char **tab_param)
 {
 	char	*buffer;
 
-	buffer = argv[general_index];
-	argv[general_index] = argv[general_index - 1];
-	argv[general_index - 1] = buffer;
+	buffer = tab_param[a];
+	tab_param[a] = tab_param[b];
+	tab_param[b] = buffer;
 }
 
-int		ft_compare(char *str1, char *str2)
+int		ft_strcmp(char *s1, char *s2)
 {
-	int		i;
+	int		count;
 
-	i = 0;
-	while (str1[i] == str2[i])
+	count = 0;
+	while ((s1[count] == s2[count]) && (s1[count] != '\0'))
 	{
-		i += 1;
+		count += 1;
 	}
-	if (str1[i] > str2[i])
+	if (s1[count] > s2[count])
 	{
 		return (1);
 	}
-	return (0);
-}
-
-int		ft_biggest(int general_index, char **argv)
-{
-	if (ft_compare(argv[general_index], argv[general_index - 1]) == 1)
+	else if (s1[count] < s2[count])
 	{
-		ft_swap(general_index, argv);
-		if (argv[general_index + 1])
-		{
-			ft_biggest(general_index + 1, argv);
-		}
-	}
-	if (general_index > 1)
-	{
-		ft_biggest(general_index - 1, argv);
+		return (-1);
 	}
 	return (0);
 }
 
-void	ft_sort_params(int argc, char **argv)
+int		ft_sort_params(int nbr_param, char **tab_param)
 {
-	char	return_chariot;
-	int		letter_pos;
+	int		i;
+	int		smaller;
+	int		index_tab_param_classified;
 
-	return_chariot = '\n';
-	letter_pos = 0;
-	argc -= 1;
-	ft_biggest(argc, argv);
-	argc -= 1;
-	while (argc >= 0)
+	index_tab_param_classified = 0;
+	while (index_tab_param_classified < nbr_param)
 	{
-		while (argv[argc][letter_pos])
+		smaller = index_tab_param_classified;
+		i = index_tab_param_classified;
+		while (i < nbr_param)
 		{
-			ft_putchar(argv[argc][letter_pos]);
-			letter_pos += 1;
+			if (ft_strcmp(tab_param[smaller], tab_param[i]) > 0)
+			{
+				smaller = i;
+			}
+			i += 1;
 		}
-		letter_pos = 0;
-		ft_putchar(return_chariot);
-		argc -= 1;
+		ft_swap(smaller, index_tab_param_classified, tab_param);
+		index_tab_param_classified += 1;
 	}
+	return (0);
 }
 
 int		main(int argc, char **argv)
 {
 	ft_sort_params(argc, argv);
+	ft_print_params(argc, argv);
+	return (0);
 }

@@ -6,21 +6,22 @@
 /*   By: vpetit <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/07 16:55:31 by vpetit            #+#    #+#             */
-/*   Updated: 2016/11/18 23:55:26 by vpetit           ###   ########.fr       */
+/*   Updated: 2016/11/23 17:59:34 by vpetit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/lib_ft_display_file.h"
+int		ft_putchar(char c);
 
-int		ft_putstr(char *str)
+void	ft_putstr(void *str)
 {
+	char	*buff;
 	int		i;
 
+	buff = str;
 	i = 0;
-	while (str[i])
+	while (buff[i])
 	{
-		ft_putchar(str[i]);
+		ft_putchar(buff[i]);
 		i += 1;
 	}
-	return (0);
 }

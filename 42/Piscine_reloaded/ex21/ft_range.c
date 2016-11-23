@@ -6,7 +6,7 @@
 /*   By: vpetit <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/15 21:17:59 by vpetit            #+#    #+#             */
-/*   Updated: 2016/11/19 15:27:13 by vpetit           ###   ########.fr       */
+/*   Updated: 2016/11/23 19:04:11 by vpetit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int		*ft_range(int min, int max)
 	cpt = 0;
 	if (min >= max)
 	{
-		value_range = NULL;
+		return (NULL);
 	}
 	else
 	{
@@ -30,18 +30,7 @@ int		*ft_range(int min, int max)
 			value_range[cpt] = min + cpt;
 			cpt += 1;
 		}
-	value_range[cpt] = NULL;
 	}
+	value_range[cpt] = '\0';
 	return (value_range);
-	//free(value_range);
-}
-
-int		main(void)
-{
-	int	*ptr;
-
-	ptr = ft_range(30, 40);
-	//free(ptr);
-	free(ft_range(30, 40));
-	return (ptr[9]);
 }

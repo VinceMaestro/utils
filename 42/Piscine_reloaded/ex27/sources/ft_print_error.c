@@ -10,14 +10,14 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/lib_ft_display_file.h"
+#include <unistd.h>
 
 int		ft_print_error(char *error_msg)
 {
 	int		index;
 
 	index = 0;
-	while (error_msg[index])
+	while (error_msg[index] != '\0')
 	{
 		write(2, &error_msg[index], 1);
 		index += 1;

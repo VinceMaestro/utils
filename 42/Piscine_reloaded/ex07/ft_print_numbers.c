@@ -6,7 +6,7 @@
 /*   By: vpetit <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/07 16:36:53 by vpetit            #+#    #+#             */
-/*   Updated: 2016/11/19 15:01:09 by vpetit           ###   ########.fr       */
+/*   Updated: 2016/11/23 03:31:51 by vpetit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,4 @@ void	ft_print_numbers(void)
 		ft_putchar(current_number);
 		current_number += 1;
 	}
-	ft_putchar('\n');
 }

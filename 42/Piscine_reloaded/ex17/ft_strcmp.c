@@ -6,7 +6,7 @@
 /*   By: vpetit <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/07 21:04:18 by vpetit            #+#    #+#             */
-/*   Updated: 2016/11/07 21:04:20 by vpetit           ###   ########.fr       */
+/*   Updated: 2016/11/23 02:24:35 by vpetit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,11 @@ int		ft_strcmp(char *s1, char *s2)
 	{
 		count += 1;
 	}
-	if (s1[count] < s2[count])
+	if (s1[count] > s2[count])
 	{
 		return (1);
 	}
-	else if (s1[count] > s2[count])
+	else if (s1[count] < s2[count])
 	{
 		return (-1);
 	}
