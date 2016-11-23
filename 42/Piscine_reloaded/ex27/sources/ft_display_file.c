@@ -6,7 +6,7 @@
 /*   By: vpetit <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/16 23:33:49 by vpetit            #+#    #+#             */
-/*   Updated: 2016/11/23 18:32:42 by vpetit           ###   ########.fr       */
+/*   Updated: 2016/11/23 20:12:47 by vpetit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int		ft_display_file(char *argv)
 	{
 		if (read(open_fd, buffer, 1) != 0)
 		{
-			ft_putstr(buffer);
+			ft_putchar(buffer[0]);
 		}
 		else	
 		{

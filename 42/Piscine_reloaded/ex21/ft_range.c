@@ -6,7 +6,7 @@
 /*   By: vpetit <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/15 21:17:59 by vpetit            #+#    #+#             */
-/*   Updated: 2016/11/23 19:04:11 by vpetit           ###   ########.fr       */
+/*   Updated: 2016/11/23 19:21:13 by vpetit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,16 +20,13 @@ int		*ft_range(int min, int max)
 	cpt = 0;
 	if (min >= max)
 	{
-		return (NULL);
+		return (0);
 	}
-	else
+	value_range = (int*)malloc(sizeof(*value_range) * (max - min + 1));
+	while (cpt < max - min)
 	{
-		value_range = (int*)malloc(sizeof(*value_range) * (max - min + 1));
-		while (cpt < max - min)
-		{
-			value_range[cpt] = min + cpt;
-			cpt += 1;
-		}
+		value_range[cpt] = min + cpt;
+		cpt += 1;
 	}
 	value_range[cpt] = '\0';
 	return (value_range);

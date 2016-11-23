@@ -6,7 +6,7 @@
 /*   By: vpetit <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/16 23:36:09 by vpetit            #+#    #+#             */
-/*   Updated: 2016/11/23 17:57:59 by vpetit           ###   ########.fr       */
+/*   Updated: 2016/11/23 20:15:14 by vpetit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,5 @@
 int		ft_putchar(char c);
 int		ft_display_file(char *argv);
 int		ft_print_error(char *error_msg);
-void	ft_putstr(void *str);
 
 #endif

@@ -6,7 +6,7 @@
 #    By: vpetit <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/18 21:24:23 by vpetit            #+#    #+#              #
-#    Updated: 2016/11/23 17:58:34 by vpetit           ###   ########.fr        #
+#    Updated: 2016/11/23 20:15:31 by vpetit           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ SRC_DIR = ./sources
 
 INCL_DIR = ./includes
 
-SRC = ft_display_file ft_print_error ft_putchar ft_putstr main
+SRC = ft_display_file ft_print_error ft_putchar  main
 
 INCL = lib_ft_display_file
 

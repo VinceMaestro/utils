@@ -6,7 +6,7 @@
 /*   By: vpetit <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/07 18:58:00 by vpetit            #+#    #+#             */
-/*   Updated: 2016/11/07 18:58:03 by vpetit           ###   ########.fr       */
+/*   Updated: 2016/11/23 19:36:25 by vpetit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int		ft_iterative_factorial(int nb)
 	{
 		return (1);
 	}
-	else if (nb > 0)
+	else if (nb > 0 && nb < 13)
 	{
 		count = nb - 1;
 		while (count > 1)
