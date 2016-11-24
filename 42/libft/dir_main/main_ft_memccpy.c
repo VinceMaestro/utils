@@ -1,25 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   main_ft_memccpy.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vpetit <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/07 20:56:52 by vpetit            #+#    #+#             */
-/*   Updated: 2016/11/24 01:38:54 by vpetit           ###   ########.fr       */
+/*   Created: 2016/11/24 00:17:38 by vpetit            #+#    #+#             */
+/*   Updated: 2016/11/24 00:17:52 by vpetit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
 #include "libft.h"
 
-size_t		ft_strlen(const char *str)
+int		main(void)
 {
-	int		count;
+	char const	*src;
+	char	des[12];
 
-	count = 0;
-	while (str[count])
-	{
-		count += 1;
-	}
-	return (count);
+	src = "hellH World";
+	printf("String is : %s \n ",(char*)(ft_memccpy(des, src, 72, 8)));
+	return (0);
 }

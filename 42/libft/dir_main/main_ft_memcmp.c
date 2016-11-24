@@ -1,38 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   main_ft_memcmp.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vpetit <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/08 10:31:04 by vpetit            #+#    #+#             */
-/*   Updated: 2016/11/16 19:01:50 by vpetit           ###   ########.fr       */
+/*   Created: 2016/11/24 00:33:39 by vpetit            #+#    #+#             */
+/*   Updated: 2016/11/24 01:23:22 by vpetit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include <stdio.h>
+#include "libft.h"
 
-char	*ft_strdup(char *src)
+int main (void)
 {
-	char	*src_copy;
-	int		src_len;
-	int		i;
+	char str1[] = "AAcdef";
+	char str2[] = "ABCDEF";
+	int ret;
 
-	src_len = 0;
-	i = 0;
-	while (src[src_len] != '\0')
+	//ft_memcpy(str1, "abcdef", 6);
+	//ft_memcpy(str2, "ABCDEF", 6);
+	ret = ft_memcmp(str1, str2, 5);
+	if(ret > 0)
 	{
-		src_len += 1;
+		printf("str2 is less than str1\n");
 	}
-	src_copy = (char*)malloc(sizeof(*src_copy) * (src_len + 1));
-	if (src_copy != NULL)
+	else if(ret < 0) 
 	{
-		while (i < src_len)
-		{
-			src_copy[i] = src[i];
-			i += 1;
-		}
-		src_copy[i] = '\0';
+		printf("str1 is less than str2\n");
 	}
-	return (src_copy);
+	else 
+	{
+		printf("str1 is equal to str2\n");
+	}
+	return(0);
 }

@@ -1,25 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   main_ft_memmove.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vpetit <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/07 20:56:52 by vpetit            #+#    #+#             */
-/*   Updated: 2016/11/24 01:38:54 by vpetit           ###   ########.fr       */
+/*   Created: 2016/11/23 22:53:46 by vpetit            #+#    #+#             */
+/*   Updated: 2016/11/24 00:13:30 by vpetit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
 #include "libft.h"
 
-size_t		ft_strlen(const char *str)
-{
-	int		count;
+void *ft_memmove(void *dst, void const *src, size_t len);
 
-	count = 0;
-	while (str[count])
-	{
-		count += 1;
-	}
-	return (count);
+int		main (void)
+{
+	char dest[] = "oldstring";
+	const char src[]  = "newstring";
+
+	printf("Before memmove dest = %s, src = %s\n", dest, src);
+	ft_memmove(dest, src, 9);
+	printf("After memmove dest = %s, src = %s\n", dest, src);
+	return (0);
 }

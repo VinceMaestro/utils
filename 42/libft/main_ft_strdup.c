@@ -1,25 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   main_ft_strdup.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vpetit <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/07 20:56:52 by vpetit            #+#    #+#             */
-/*   Updated: 2016/11/24 01:38:54 by vpetit           ###   ########.fr       */
+/*   Created: 2016/11/24 01:59:21 by vpetit            #+#    #+#             */
+/*   Updated: 2016/11/24 02:05:15 by vpetit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
 #include "libft.h"
 
-size_t		ft_strlen(const char *str)
+int		main(void)
 {
-	int		count;
-
-	count = 0;
-	while (str[count])
+	char const	src[] = "Hello world!";
+	if (ft_strcmp(ft_strdup(src), src) == 0)
 	{
-		count += 1;
+		printf("Perfect copy");
 	}
-	return (count);
+	else
+	{
+		printf("copy altered");
+	}
+	return (0);
 }

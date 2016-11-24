@@ -1,25 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_memccpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vpetit <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/07 20:56:52 by vpetit            #+#    #+#             */
-/*   Updated: 2016/11/24 01:38:54 by vpetit           ###   ########.fr       */
+/*   Created: 2016/11/23 22:09:02 by vpetit            #+#    #+#             */
+/*   Updated: 2016/11/23 23:09:20 by vpetit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t		ft_strlen(const char *str)
+void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 {
-	int		count;
-
-	count = 0;
-	while (str[count])
+	int		i;
+	
+	i = 0;
+	while (i < (int)n)
 	{
-		count += 1;
+		((char*)dst)[i] = ((char*)src)[i];
+		if (((char*)dst)[i] == ((unsigned char)c))
+		{
+			return (dst);
+		}
+		i += 1;
 	}
-	return (count);
+	return (dst);
 }

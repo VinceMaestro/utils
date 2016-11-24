@@ -1,25 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vpetit <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/07 20:56:52 by vpetit            #+#    #+#             */
-/*   Updated: 2016/11/24 01:38:54 by vpetit           ###   ########.fr       */
+/*   Created: 2016/11/24 00:20:20 by vpetit            #+#    #+#             */
+/*   Updated: 2016/11/24 00:33:25 by vpetit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t		ft_strlen(const char *str)
+int		ft_memcmp(void const *s1, void const *s2, size_t n)
 {
-	int		count;
+	int		i;
 
-	count = 0;
-	while (str[count])
+	i = 0;
+	while ((i < (int)n) && (((char*)s1)[i] == ((char*)s2)[i]))
 	{
-		count += 1;
+		i++;
 	}
-	return (count);
+	if (((char*)s1)[i] > ((char*)s2)[i])
+	{
+		return (1);
+	}
+	else if (((char*)s1)[i] < ((char*)s2)[i])
+	{
+		return (-1);
+	}
+	return (0);
 }

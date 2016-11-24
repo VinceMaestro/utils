@@ -1,25 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   main_ft_strcpy.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vpetit <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/07 20:56:52 by vpetit            #+#    #+#             */
-/*   Updated: 2016/11/24 01:38:54 by vpetit           ###   ########.fr       */
+/*   Created: 2016/11/24 02:18:03 by vpetit            #+#    #+#             */
+/*   Updated: 2016/11/24 02:18:16 by vpetit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
 #include "libft.h"
 
-size_t		ft_strlen(const char *str)
+int main()
 {
-	int		count;
+	char src[40];
+	char dest[100];
 
-	count = 0;
-	while (str[count])
-	{
-		count += 1;
-	}
-	return (count);
+	//memset(dest, '\0', sizeof(dest));
+	strcpy(src, "Hello world!");
+	strcpy(dest, src);
+
+	printf("Final copied string : %s\n", dest);
+
+	return(0);
 }
