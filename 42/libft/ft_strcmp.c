@@ -1,37 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_range.c                                         :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vpetit <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/15 21:17:59 by vpetit            #+#    #+#             */
-/*   Updated: 2016/11/16 19:01:14 by vpetit           ###   ########.fr       */
+/*   Created: 2016/11/07 21:04:18 by vpetit            #+#    #+#             */
+/*   Updated: 2016/11/23 02:24:35 by vpetit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-
-int		*ft_range(int min, int max)
+int		ft_strcmp(char *s1, char *s2)
 {
-	int		*value_range;
-	int		cpt;
+	int		count;
 
-	cpt = 0;
-	if (min >= max)
+	count = 0;
+	while ((s1[count] == s2[count]) && (s1[count] != '\0'))
 	{
-		value_range = NULL;
+		count += 1;
 	}
-	else
+	if (s1[count] > s2[count])
 	{
-		value_range = (int*)malloc(sizeof(*value_range) * (max - min));
-		while (cpt < max - min)
-		{
-			value_range[cpt] = min + cpt;
-			printf("%i\n", value_range[cpt]);
-			cpt += 1;
-		}
+		return (1);
 	}
-	free(value_range);
-	return (value_range);
+	else if (s1[count] < s2[count])
+	{
+		return (-1);
+	}
+	return (0);
 }

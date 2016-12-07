@@ -3,3 +3,29 @@ ft_first_elem_of_list(int* or char*)
 
 // Permettre un polymorphisme parametrique
 ft_type_polymorphic
+
+// test (el1 == el2 && el1)
+ft_equal_and_exist(el1, el2)
+	return true or false
+
+// Fait un test turner
+ft_terner(el1,el2,act1,act2)
+	if el1 == el2
+		return act1
+	return act2
+
+ft_for(i, lenght, *ft(void*))
+{
+	while (i < lenght)
+	{
+		ft(i);
+		i ++;
+	}
+}
+
+ft_for_el_in(void *ptr, *ft(void*))
+{
+	el = 0;
+	ft_for(el, ft_list_len((char**)ptr, ft(void));
+}
+	

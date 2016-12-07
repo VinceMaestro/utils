@@ -1,25 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main_ft_strlen.c                                   :+:      :+:    :+:   */
+/*   ft_range.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vpetit <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/24 01:34:17 by vpetit            #+#    #+#             */
-/*   Updated: 2016/11/24 01:46:17 by vpetit           ###   ########.fr       */
+/*   Created: 2016/11/15 21:17:59 by vpetit            #+#    #+#             */
+/*   Updated: 2016/11/23 19:21:13 by vpetit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include "libft.h"
+#include <stdlib.h>
 
-int main ()
+int		*ft_range(int min, int max)
 {
-	char str[] = "This is Sparta!";
-	int len;
+	int		*value_range;
+	int		cpt;
 
-	len = ft_strlen(str);
-	printf("Length |%s| is |%d|\n", str, len);
-
-	return(0);
+	cpt = 0;
+	if (min >= max)
+	{
+		return (0);
+	}
+	value_range = (int*)malloc(sizeof(*value_range) * (max - min + 1));
+	while (cpt < max - min)
+	{
+		value_range[cpt] = min + cpt;
+		cpt += 1;
+	}
+	value_range[cpt] = '\0';
+	return (value_range);
 }

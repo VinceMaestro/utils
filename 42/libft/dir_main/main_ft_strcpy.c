@@ -1,34 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   main_ft_strcpy.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vpetit <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/07 21:04:18 by vpetit            #+#    #+#             */
-/*   Updated: 2016/11/07 21:04:20 by vpetit           ###   ########.fr       */
+/*   Created: 2016/11/24 02:18:03 by vpetit            #+#    #+#             */
+/*   Updated: 2016/11/24 02:18:16 by vpetit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_strcmp(char *s1, char *s2)
-{
-	int		count;
+#include <stdio.h>
+#include "libft.h"
 
-	count = 0;
-	while (s1[count] && s2[count])
-	{
-		count += 1;
-	}
-	if (s1[count])
-	{
-		return (1);
-	}
-	else if (s2[count])
-	{
-		return (-1);
-	}
-	else
-	{
-		return (0);
-	}
+int main()
+{
+	char src[] = "Hello world!";
+	char dest[40];
+
+	ft_strcpy(dest, src);
+
+	printf("Final copied string : %s\n", dest);
+
+	return(0);
 }

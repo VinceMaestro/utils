@@ -1,28 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main_ft_strdup.c                                   :+:      :+:    :+:   */
+/*   ft_strncpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vpetit <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/24 01:59:21 by vpetit            #+#    #+#             */
-/*   Updated: 2016/11/24 02:05:15 by vpetit           ###   ########.fr       */
+/*   Created: 2016/11/24 02:05:39 by vpetit            #+#    #+#             */
+/*   Updated: 2016/11/24 02:06:27 by vpetit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include "libft.h"
 
-int		main(void)
+char	*ft_strncpy(char *dst, char const *src, size_t n)
 {
-	char const	src[] = "Hello world!";
-	if (ft_strcmp(ft_strdup(src), src) == 0)
+	int		i;
+
+	i = 0;
+	while (i < (int)n)
 	{
-		printf("Perfect copy");
+		if (src[i] != '0')
+		{
+			dst[i] = src[i];
+			while (i < (int)n)
+			{
+				dst[i] = '\0';
+				i ++;
+			}
+			ft_putstr(dst);
+			return (dst);
+		}
+		else
+		{
+			dst[i] = '\0';
+			i ++;
+		}
 	}
-	else
-	{
-		printf("copy altered");
-	}
-	return (0);
+	return (dst);
 }

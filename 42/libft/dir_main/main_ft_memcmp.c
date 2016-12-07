@@ -15,12 +15,10 @@
 
 int main (void)
 {
-	char str1[] = "AAcdef";
+	char str1[] = "abcdef";
 	char str2[] = "ABCDEF";
 	int ret;
 
-	//ft_memcpy(str1, "abcdef", 6);
-	//ft_memcpy(str2, "ABCDEF", 6);
 	ret = ft_memcmp(str1, str2, 5);
 	if(ret > 0)
 	{
