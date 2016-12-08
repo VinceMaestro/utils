@@ -3,9 +3,8 @@
 
 int   main(void)
 {
-  const char big[] = "Hello World and World welcome !";
-  const char little[] = "World";
+  // const char big[] = "Hello World and World welcome !";
+  // const char little[] = "world";
 
-  // ft_strstr(big, little);
-  printf("%s\n", ft_strstr(big, little));
+  printf("%s\n", ft_strstr(NULL, NULL));
 }
