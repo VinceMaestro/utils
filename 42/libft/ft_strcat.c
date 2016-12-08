@@ -1,39 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_strcat.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vpetit <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/24 02:05:39 by vpetit            #+#    #+#             */
-/*   Updated: 2016/11/24 02:06:27 by vpetit           ###   ########.fr       */
+/*   Created: 2016/12/08 17:01:48 by vpetit            #+#    #+#             */
+/*   Updated: 2016/12/08 17:01:53 by vpetit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-char	*ft_strncpy(char *dst, char const *src, size_t n)
+char    *ft_strcat(char *restrict s1, const char *restrict s2)
 {
-	int		i;
+  int  i1;
+  int  i2;
 
-	i = 0;
-	while (i < (int)n)
-	{
-		if (src[i] == '\0')
-		{
-			dst[i] = src[i];
-			while (i < (int)n)
-			{
-				dst[i] = '\0';
-				i ++;
-			}
-			return (dst);
-		}
-		else
-		{
-			dst[i] = src[i];
-			i ++;
-		}
-	}
-	return (dst);
+  i1 = 0;
+  i2 = 0;
+  while (s1[i1] != '\0')
+  {
+    i1++;
+  }
+  while (s2[i2] != '\0')
+  {
+    s1[i1] = s2[i2];
+    i1 ++;
+    i2 ++;
+  }
+  s1[i1] = '\0';
+  return (s1);
 }

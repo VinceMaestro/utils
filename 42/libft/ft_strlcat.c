@@ -1,39 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vpetit <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/24 02:05:39 by vpetit            #+#    #+#             */
-/*   Updated: 2016/11/24 02:06:27 by vpetit           ###   ########.fr       */
+/*   Created: 2016/12/08 17:39:31 by vpetit            #+#    #+#             */
+/*   Updated: 2016/12/08 17:39:36 by vpetit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strncpy(char *dst, char const *src, size_t n)
+size_t  ft_strlcat(char * restrict dst, const char * restrict src, size_t size)
 {
-	int		i;
+  int  i1;
+  int  i2;
 
-	i = 0;
-	while (i < (int)n)
-	{
-		if (src[i] == '\0')
-		{
-			dst[i] = src[i];
-			while (i < (int)n)
-			{
-				dst[i] = '\0';
-				i ++;
-			}
-			return (dst);
-		}
-		else
-		{
-			dst[i] = src[i];
-			i ++;
-		}
-	}
-	return (dst);
+  i1 = 0;
+  i2 = 0;
+  while (dst[i1] != 0)
+  {
+    i1++;
+  }
+  while (i2 < (int)size)
+  {
+    dst[i1] = src[i2];
+    i1 ++;
+    i2 ++;
+  }
+  dst[i1] = 0;
+  return (i1 + i2);
 }
