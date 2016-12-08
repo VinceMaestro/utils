@@ -5,6 +5,7 @@ int   main(void)
 {
   char  s1[] = "Hello ";
   char  s2[] = "World!";
+
   int   len = 3;
 
   ft_strlcat(s1, s2, len);
