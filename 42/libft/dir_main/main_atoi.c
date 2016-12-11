@@ -1,33 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   main_atoi.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vpetit <vpetit@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/07 21:04:18 by vpetit            #+#    #+#             */
-/*   Updated: 2016/12/11 18:24:33 by vpetit           ###   ########.fr       */
+/*   Created: 2016/12/11 19:26:37 by vpetit            #+#    #+#             */
+/*   Updated: 2016/12/11 19:54:12 by vpetit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
-int		ft_strcmp(const char *s1, const char *s2)
+int	main()
 {
-	int		count;
+	int val;
+	char	str[] = "98a993489";
+	char	str2[] = "tutorialspoint.com";
 
-	count = 0;
-	while ((s1[count] == s2[count]) && (s1[count] != '\0'))
-	{
-		count += 1;
-	}
-	if (s1[count] > s2[count])
-	{
-		return (1);
-	}
-	else if (s1[count] < s2[count])
-	{
-		return (-1);
-	}
+	val = ft_atoi(str);
+	printf("String value = %s, Int value = %d\n", str, val);
+
+	val = ft_atoi(str2);
+	printf("String value = %s, Int value = %d\n", str2, val);
 	return (0);
 }

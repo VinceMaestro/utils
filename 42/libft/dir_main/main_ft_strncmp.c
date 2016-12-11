@@ -5,13 +5,15 @@
 int	main(void)
 {
 	char	s1[] = "Hello World!";
-	char	s2[] = "Hello World! ";
+	char	s2[] = "Hello World";
+	size_t nbr = 5;
 
-	if (ft_strcmp(s1, s2) == 1)
+
+	if (ft_strncmp(s1, s2, nbr) == 1)
 	{
 		printf("s1 supperieur s2");
 	}
-	else if (ft_strcmp(s1, s2) == -1)
+	else if (ft_strncmp(s1, s2, nbr) == -1)
 	{
 		printf("s1 inferieur s2");
 	}

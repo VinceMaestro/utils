@@ -1,33 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vpetit <vpetit@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/07 21:04:18 by vpetit            #+#    #+#             */
-/*   Updated: 2016/12/11 18:24:33 by vpetit           ###   ########.fr       */
+/*   Created: 2016/12/11 18:35:09 by vpetit            #+#    #+#             */
+/*   Updated: 2016/12/11 19:54:23 by vpetit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-int		ft_strcmp(const char *s1, const char *s2)
+int	ft_atoi(const char *str)
 {
-	int		count;
+	int	i;
+	int	buff;
 
-	count = 0;
-	while ((s1[count] == s2[count]) && (s1[count] != '\0'))
+	i = 0;
+	buff = 0;
+	while (str[i] >= 48 && str[i] <= 57)
 	{
-		count += 1;
+		if (i > 0)
+			buff *= 10;
+		buff += (str[i] - 48);
+		if (buff == 0)
+			buff = 1;
+		i++;
 	}
-	if (s1[count] > s2[count])
-	{
-		return (1);
-	}
-	else if (s1[count] < s2[count])
-	{
-		return (-1);
-	}
-	return (0);
+	return (buff);
 }
