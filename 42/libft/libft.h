@@ -6,7 +6,7 @@
 /*   By: vpetit <vpetit@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/22 17:07:18 by vpetit            #+#    #+#             */
-/*   Updated: 2016/12/11 19:50:39 by vpetit           ###   ########.fr       */
+/*   Updated: 2016/12/11 20:39:25 by vpetit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,5 +38,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len);
 int		ft_strcmp(const char *s1, const char *s2);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 int		ft_atoi(const char *str);
+int		ft_isalpha(int c);
+int		ft_isdigit(int c);
 
 #endif
