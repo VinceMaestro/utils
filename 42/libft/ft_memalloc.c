@@ -6,7 +6,7 @@
 /*   By: vpetit <vpetit@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/12 16:15:31 by vpetit            #+#    #+#             */
-/*   Updated: 2016/12/12 17:16:35 by vpetit           ###   ########.fr       */
+/*   Updated: 2016/12/12 17:51:15 by vpetit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,10 @@ void	*ft_memalloc(size_t size)
 	void *ptr;
 
 	ptr = (void*)malloc(sizeof(*ptr) * (size + 1));
-	((char*)ptr)[0] = 0;
-	return (ptr);
+	if (ptr != 0)
+	{
+		((char*)ptr)[size + 2] = 0;
+		return (ptr);
+	}
+	return (NULL);
 }
