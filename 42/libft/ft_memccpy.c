@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memccpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vpetit <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: vpetit <vpetit@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/23 22:09:02 by vpetit            #+#    #+#             */
-/*   Updated: 2016/11/23 23:09:20 by vpetit           ###   ########.fr       */
+/*   Updated: 2016/12/12 14:51:32 by vpetit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 {
 	int		i;
-	
+
 	i = 0;
 	while (i < (int)n)
 	{

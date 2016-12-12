@@ -3,30 +3,30 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strcat.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vpetit <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: vpetit <vpetit@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/08 17:01:48 by vpetit            #+#    #+#             */
-/*   Updated: 2016/12/08 17:01:53 by vpetit           ###   ########.fr       */
+/*   Updated: 2016/12/12 15:37:42 by vpetit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char    *ft_strcat(char *restrict s1, const char *restrict s2)
+char	*ft_strcat(char *restrict s1, const char *restrict s2)
 {
-  int  i1;
-  int  i2;
+	int i1;
+	int i2;
 
-  i1 = 0;
-  i2 = 0;
-  while (s1[i1] != '\0')
-  {
-    i1++;
-  }
-  while (s2[i2] != '\0')
-  {
-    s1[i1] = s2[i2];
-    i1 ++;
-    i2 ++;
-  }
-  s1[i1] = '\0';
-  return (s1);
+	i1 = 0;
+	i2 = 0;
+	while (s1[i1] != '\0')
+	{
+		i1++;
+	}
+	while (s2[i2] != '\0')
+	{
+		s1[i1] = s2[i2];
+		i1++;
+		i2++;
+	}
+	s1[i1] = '\0';
+	return (s1);
 }

@@ -1,27 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vpetit <vpetit@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/07 16:55:31 by vpetit            #+#    #+#             */
-/*   Updated: 2016/12/12 15:37:46 by vpetit           ###   ########.fr       */
+/*   Created: 2016/12/12 14:31:39 by vpetit            #+#    #+#             */
+/*   Updated: 2016/12/12 15:38:03 by vpetit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-void	ft_putstr(void *str)
+int		ft_toupper(int c)
 {
-	char	*buff;
-	int		i;
-
-	buff = str;
-	i = 0;
-	while (buff[i])
-	{
-		write(1, &(buff[i]), 1);
-		i += 1;
-	}
+	if (c >= 97 && c <= 122)
+		return (c - 32);
+	return (c);
 }

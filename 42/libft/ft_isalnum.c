@@ -6,12 +6,14 @@
 /*   By: vpetit <vpetit@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/11 20:43:35 by vpetit            #+#    #+#             */
-/*   Updated: 2016/12/11 20:44:55 by vpetit           ###   ########.fr       */
+/*   Updated: 2016/12/12 14:51:13 by vpetit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_isalnum(int c)
 {
-	if (ft_isalpha(c) != 0 || ft_isdigit(c) != 0)
-		return ();
+	if ((c >= 48 && c <= 57) || (c >= 65 && c <= 90) || (c >= 97 && c <= 122))
+		return (c);
+	else
+		return (0);
 }

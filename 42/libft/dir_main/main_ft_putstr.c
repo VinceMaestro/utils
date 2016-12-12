@@ -1,27 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   main_ft_putstr.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vpetit <vpetit@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/07 16:55:31 by vpetit            #+#    #+#             */
-/*   Updated: 2016/12/12 15:37:46 by vpetit           ###   ########.fr       */
+/*   Created: 2016/12/12 15:17:08 by vpetit            #+#    #+#             */
+/*   Updated: 2016/12/12 15:17:49 by vpetit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr(void *str)
+int	main(void)
 {
-	char	*buff;
-	int		i;
+	char	str[] = "Hello World!";
 
-	buff = str;
-	i = 0;
-	while (buff[i])
-	{
-		write(1, &(buff[i]), 1);
-		i += 1;
-	}
+	ft_putstr(str);
+	return (0);
 }

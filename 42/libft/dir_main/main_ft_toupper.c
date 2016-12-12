@@ -1,27 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   main_ft_toupper.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vpetit <vpetit@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/07 16:55:31 by vpetit            #+#    #+#             */
-/*   Updated: 2016/12/12 15:37:46 by vpetit           ###   ########.fr       */
+/*   Created: 2016/12/12 14:38:08 by vpetit            #+#    #+#             */
+/*   Updated: 2016/12/12 14:43:23 by vpetit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
 #include "libft.h"
 
-void	ft_putstr(void *str)
+int	main(void)
 {
-	char	*buff;
-	int		i;
+	int	var;
 
-	buff = str;
-	i = 0;
-	while (buff[i])
-	{
-		write(1, &(buff[i]), 1);
-		i += 1;
-	}
+	var = 100;
+	if (ft_toupper(var) != var)
+		printf("%i is the upper case\n", ft_toupper(var));
+	else
+		printf("%i as no upper case\n", ft_toupper(var));
+	return (0);
 }

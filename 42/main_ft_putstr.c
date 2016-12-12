@@ -1,26 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   main_ft_putstr.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vpetit <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: vpetit <vpetit@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/22 18:39:18 by vpetit            #+#    #+#             */
-/*   Updated: 2016/11/22 18:48:51 by vpetit           ###   ########.fr       */
+/*   Created: 2016/12/12 15:17:08 by vpetit            #+#    #+#             */
+/*   Updated: 2016/12/12 15:37:53 by vpetit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		memset(void *b, int c, size_t len)
-{
-	int		lenght;
-	unsigned char	buff;
+#include "libft.h"
 
-	buff = 48 + c;
-	lenght = len - 1;
-	while (lenght <= 0)
-	{
-		b[lenght] = buff;
-		lenght -= 1;
-	}
-	return (b[lenght]);
+int	main(void)
+{
+	char	str[] = "Hello World!";
+
+	ft_putstr(str);
+	return (0);
 }
