@@ -6,7 +6,7 @@
 /*   By: vpetit <vpetit@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/22 17:07:18 by vpetit            #+#    #+#             */
-/*   Updated: 2016/12/12 15:14:07 by vpetit           ###   ########.fr       */
+/*   Updated: 2016/12/12 16:16:04 by vpetit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@
 # include <stdlib.h>
 # include <string.h>
 
+void	ft_bzero(void *s, size_t n);
+void	*ft_memset(void *b, int c, size_t len);
 void	*ft_memcpy(void *dst, void const *src, size_t n);
 void	*ft_memccpy(void *dst, void const *src, int c, size_t len);
 void	*ft_memmove(void *dst, void const *src, size_t len);
@@ -45,5 +47,6 @@ int		ft_isprint(int c);
 int		ft_toupper(int c);
 int		ft_tolower(int c);
 int		ft_putnbr(int nbr);
+void* ft_memalloc(size_t size);
 
 #endif

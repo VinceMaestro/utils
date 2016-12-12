@@ -1,21 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main_ft_putstr.c                                   :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vpetit <vpetit@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/12/12 15:17:08 by vpetit            #+#    #+#             */
-/*   Updated: 2016/12/12 15:37:53 by vpetit           ###   ########.fr       */
+/*   Created: 2016/12/12 16:03:14 by vpetit            #+#    #+#             */
+/*   Updated: 2016/12/12 16:11:18 by vpetit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	main(void)
+void	ft_bzero(void *s, size_t n)
 {
-	char	str[] = "Hello World!";
+	int	i;
 
-	ft_putstr(str);
-	return (0);
+	i = 0;
+	while (i < (int)n)
+	{
+		((char*)s)[i] = 0;
+		i++;
+	}
 }

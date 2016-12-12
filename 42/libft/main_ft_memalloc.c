@@ -1,21 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main_ft_putstr.c                                   :+:      :+:    :+:   */
+/*   main_ft_memalloc.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vpetit <vpetit@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/12/12 15:17:08 by vpetit            #+#    #+#             */
-/*   Updated: 2016/12/12 15:37:53 by vpetit           ###   ########.fr       */
+/*   Created: 2016/12/12 17:14:16 by vpetit            #+#    #+#             */
+/*   Updated: 2016/12/12 17:24:52 by vpetit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
 #include "libft.h"
 
 int	main(void)
 {
-	char	str[] = "Hello World!";
+	size_t size;
+	char *ptr;
 
-	ft_putstr(str);
+	size = 5;
+	ptr = ft_memalloc(size);
+	//ptr = "Hello";
+	printf("%s\n", ptr);
 	return (0);
 }
