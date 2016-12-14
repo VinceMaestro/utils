@@ -6,24 +6,14 @@
 /*   By: vpetit <vpetit@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/14 14:53:05 by vpetit            #+#    #+#             */
-/*   Updated: 2016/12/14 16:45:28 by vpetit           ###   ########.fr       */
+/*   Updated: 2016/12/14 17:12:26 by vpetit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-#include <stdio.h>
-
 void	ft_strdel(char **as)
 {
-	int	i;
-
-	i = 0;
-	while (as[i] != 0)
-	{
-		free(as[i]);
-		i++;
-	}
-	printf("%s\n", (char*)as);
+	free(*as);
 	as = NULL;
 }

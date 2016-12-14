@@ -6,24 +6,30 @@
 /*   By: vpetit <vpetit@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/14 12:00:54 by vpetit            #+#    #+#             */
-/*   Updated: 2016/12/14 13:20:59 by vpetit           ###   ########.fr       */
+/*   Updated: 2016/12/14 17:43:57 by vpetit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include "libft.h"
+#include <stdio.h>
 
 int	main(void)
 {
-	void	**ptr;
-	void	buff;
+	char	*ptr;
+	int	i;
 
-	ptr[0] = (char*)malloc(sizeof(**ptr) * 5);
-	ptr[1] = (char*)malloc(sizeof(**ptr) * 5);
-	ptr[0] = "Hi";
-	ptr[1] = "Hello";
-	printf("Here was ptr %s\n", ((char**)ptr)[0]);
-	buff = ft_memdel(ptr);
-	printf("Here is ptr now %p\n", buff);
+	i = 0;
+
+	ptr = (void*)malloc(sizeof(*ptr) * 10000001);
+	while (i < 10000010)
+	{
+		ptr[i] = 120;
+		i++;
+	}
+
+	ft_memdel((void*)&ptr);
+	printf("%c\n", ptr[10000005]);
+	while (1)
+		;
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: vpetit <vpetit@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/14 14:53:01 by vpetit            #+#    #+#             */
-/*   Updated: 2016/12/14 16:48:03 by vpetit           ###   ########.fr       */
+/*   Updated: 2016/12/14 17:24:28 by vpetit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,9 @@
 
 int	main(void)
 {
-	char	*as[] = 
-	int	i;
+	char	*as;
 
-	i = 0;
-	while (i < 5)
-	{
-		as[i] = (char*)malloc(sizeof(*as) * 5);
-		i++;
-	}
-	ft_strdel(as);
+	as = (char*)malloc(sizeof(*as) * 5);
+	ft_strdel(&as);
 	return (0);
 }
