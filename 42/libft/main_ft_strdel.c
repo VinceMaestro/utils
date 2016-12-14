@@ -1,26 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memalloc.c                                      :+:      :+:    :+:   */
+/*   main_ft_strdel.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vpetit <vpetit@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/12/12 16:15:31 by vpetit            #+#    #+#             */
-/*   Updated: 2016/12/14 11:38:57 by vpetit           ###   ########.fr       */
+/*   Created: 2016/12/14 14:53:01 by vpetit            #+#    #+#             */
+/*   Updated: 2016/12/14 16:48:03 by vpetit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
-void	*ft_memalloc(size_t size)
+int	main(void)
 {
-	void *ptr;
+	char	*as[] = 
+	int	i;
 
-	ptr = (void*)malloc(sizeof(*ptr) * (size + 1));
-	if (ptr != NULL)
+	i = 0;
+	while (i < 5)
 	{
-		((char*)ptr)[size + 2] = 0;
-		return (ptr);
+		as[i] = (char*)malloc(sizeof(*as) * 5);
+		i++;
 	}
-	return (NULL);
+	ft_strdel(as);
+	return (0);
 }

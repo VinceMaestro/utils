@@ -1,26 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memalloc.c                                      :+:      :+:    :+:   */
+/*   main_ft_memdel.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vpetit <vpetit@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/12/12 16:15:31 by vpetit            #+#    #+#             */
-/*   Updated: 2016/12/14 11:38:57 by vpetit           ###   ########.fr       */
+/*   Created: 2016/12/14 12:00:54 by vpetit            #+#    #+#             */
+/*   Updated: 2016/12/14 13:20:59 by vpetit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
 #include "libft.h"
 
-void	*ft_memalloc(size_t size)
+int	main(void)
 {
-	void *ptr;
+	void	**ptr;
+	void	buff;
 
-	ptr = (void*)malloc(sizeof(*ptr) * (size + 1));
-	if (ptr != NULL)
-	{
-		((char*)ptr)[size + 2] = 0;
-		return (ptr);
-	}
-	return (NULL);
+	ptr[0] = (char*)malloc(sizeof(**ptr) * 5);
+	ptr[1] = (char*)malloc(sizeof(**ptr) * 5);
+	ptr[0] = "Hi";
+	ptr[1] = "Hello";
+	printf("Here was ptr %s\n", ((char**)ptr)[0]);
+	buff = ft_memdel(ptr);
+	printf("Here is ptr now %p\n", buff);
+	return (0);
 }
