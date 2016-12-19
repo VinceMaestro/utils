@@ -1,38 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main_ft_strdel.c                                   :+:      :+:    :+:   */
+/*   ft_strendl.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vpetit <vpetit@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/12/14 12:00:54 by vpetit            #+#    #+#             */
-/*   Updated: 2016/12/19 09:41:06 by Mads             ###   ########.fr       */
+/*   Created: 2016/12/19 09:44:10 by vpetit            #+#    #+#             */
+/*   Updated: 2016/12/19 09:50:14 by Mads             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include <stdio.h>
+#include <unistd.h>
 
-int	main(void)
+void  ft_putendl(char const *s)
 {
-	char	*ptr;
-	int	i;
+  int i;
 
-	i = 0;
-
-	ptr = (char*)malloc(sizeof(*ptr) * 10000001);
-	while (i < 10000000)
-	{
-		ptr[i] = 120;
-		i++;
-	}
-	printf("Done allocating !\n");
-	//free((void*)ptr);
-
-	ft_strdel(&ptr);
-	printf("Done freeing !\n");
-
-	while (1)
-		;
-	return (0);
+  i = 0;
+  while (s[i] != '\0')
+  {
+    write(1, &s[i], 1);
+    i++;
+  }
+  write(1, "\n", 1);
 }

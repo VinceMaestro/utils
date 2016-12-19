@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main_ft_strdel.c                                   :+:      :+:    :+:   */
+/*   main_ft_memdel.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vpetit <vpetit@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/14 12:00:54 by vpetit            #+#    #+#             */
-/*   Updated: 2016/12/19 09:41:06 by Mads             ###   ########.fr       */
+/*   Updated: 2016/12/14 17:43:57 by vpetit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	main(void)
 
 	i = 0;
 
-	ptr = (char*)malloc(sizeof(*ptr) * 10000001);
+	ptr = (void*)malloc(sizeof(*ptr) * 10000001);
 	while (i < 10000000)
 	{
 		ptr[i] = 120;
@@ -29,7 +29,7 @@ int	main(void)
 	printf("Done allocating !\n");
 	//free((void*)ptr);
 
-	ft_strdel(&ptr);
+	ft_memdel((void*)&ptr);
 	printf("Done freeing !\n");
 
 	while (1)

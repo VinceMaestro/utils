@@ -6,7 +6,7 @@
 /*   By: vpetit <vpetit@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/22 17:07:18 by vpetit            #+#    #+#             */
-/*   Updated: 2016/12/14 14:52:21 by vpetit           ###   ########.fr       */
+/*   Updated: 2016/12/19 11:35:42 by Mads             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,9 +47,15 @@ int		ft_isprint(int c);
 int		ft_toupper(int c);
 int		ft_tolower(int c);
 int		ft_putnbr(int nbr);
+int		ft_putnbr_fd(int nbr, int fd);
 void	*ft_memalloc(size_t size);
 void	ft_memdel(void **ap);
 char	*ft_strnew(size_t size);
 void	ft_strdel(char **as);
+void  ft_putendl(char const *s);
+void  ft_putendl_fd(char const *s, int fd);
+void  ft_putchar_fd(char c, int fd);
+void  ft_putstr_fd(char const *s, int fd);
+
 
 #endif

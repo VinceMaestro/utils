@@ -1,26 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   main_ft_strendl.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vpetit <vpetit@student.42.fr>              +#+  +:+       +#+        */
+/*   By: Mads <Mads@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/23 18:00:23 by vpetit            #+#    #+#             */
-/*   Updated: 2016/12/19 10:51:54 by Mads             ###   ########.fr       */
+/*   Created: 2016/12/19 09:47:00 by Mads              #+#    #+#             */
+/*   Updated: 2016/12/19 09:48:13 by Mads             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
-int		ft_putnbr(int nbr)
+int main(void)
 {
-	int buff;
-
-	if (nbr % 10 != nbr)
-	{
-		ft_putnbr(nbr / 10);
-	}
-	buff = 48 + (nbr % 10);
-	write(1, &buff, 1);
-	return (0);
+  char const s[] = "Hello World!";
+  ft_putendl(s);
+  return (0);
 }
