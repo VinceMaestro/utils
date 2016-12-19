@@ -6,7 +6,7 @@
 /*   By: vpetit <vpetit@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/22 17:07:18 by vpetit            #+#    #+#             */
-/*   Updated: 2016/12/19 11:35:42 by Mads             ###   ########.fr       */
+/*   Updated: 2016/12/19 17:57:46 by vpetit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,10 +52,16 @@ void	*ft_memalloc(size_t size);
 void	ft_memdel(void **ap);
 char	*ft_strnew(size_t size);
 void	ft_strdel(char **as);
-void  ft_putendl(char const *s);
-void  ft_putendl_fd(char const *s, int fd);
-void  ft_putchar_fd(char c, int fd);
-void  ft_putstr_fd(char const *s, int fd);
+void	ft_putendl(char const *s);
+void	ft_putendl_fd(char const *s, int fd);
+void	ft_putchar_fd(char c, int fd);
+void	ft_putstr_fd(char const *s, int fd);
 
+typedef struct		s_list t_list
+{
+	void						*content;
+	size_t					content_size;
+	struct s_list		*next;
+}
 
 #endif

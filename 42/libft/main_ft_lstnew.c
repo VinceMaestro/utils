@@ -1,30 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   main_ft_lstnew.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vpetit <vpetit@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/12/08 19:24:58 by vpetit            #+#    #+#             */
-/*   Updated: 2016/12/19 17:36:01 by vpetit           ###   ########.fr       */
+/*   Created: 2016/12/19 18:37:32 by vpetit            #+#    #+#             */
+/*   Updated: 2016/12/19 18:42:24 by vpetit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(char const *s, int c)
+int	main(void)
 {
-	int		i;
-	char	*buff;
+	char	str[] = "Hello World!";
+	int		str_len;
+	char	*str2;
 
-	i = 0;
-	while (s[i] != '\0')
+	str_len = ft_strlen(str);
+	str2 = ft_lstnew(str, str_len);
+	while (str2->next)
 	{
-		if (s[i] == c)
-		{
-			buff = (char*)&s[i];
-		}
-		i++;
+		ft_putstr(str2->next);
+		str2->next;
 	}
-	return (buff);
+	return (0);
 }
