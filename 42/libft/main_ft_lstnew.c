@@ -6,7 +6,7 @@
 /*   By: vpetit <vpetit@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/19 18:37:32 by vpetit            #+#    #+#             */
-/*   Updated: 2016/12/19 18:42:24 by vpetit           ###   ########.fr       */
+/*   Updated: 2016/12/19 19:52:06 by vpetit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,16 @@
 
 int	main(void)
 {
-	char	str[] = "Hello World!";
-	int		str_len;
-	char	*str2;
+	char const	str[] = "Hello World!";
+	int			str_len;
+	t_list		*str2;
 
 	str_len = ft_strlen(str);
 	str2 = ft_lstnew(str, str_len);
-	while (str2->next)
+	while (str2)
 	{
-		ft_putstr(str2->next);
-		str2->next;
+		ft_putstr(str2->content);
+		str2 = str2->next;
 	}
 	return (0);
 }
