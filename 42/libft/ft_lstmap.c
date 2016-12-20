@@ -1,33 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vpetit <vpetit@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/12/19 17:44:30 by vpetit            #+#    #+#             */
-/*   Updated: 2016/12/20 12:52:53 by vpetit           ###   ########.fr       */
+/*   Created: 2016/12/20 16:35:09 by vpetit            #+#    #+#             */
+/*   Updated: 2016/12/20 18:13:51 by vpetit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <libft.h>
 
-t_list	*ft_lstnew(void const *content, size_t content_size)
+void	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 {
-	t_list	*new_node;
+	t_list	new;
+	t_list	tmp;
 
-	new_node = (void*)malloc(sizeof(t_list));
-	if (content)
+	tmp = f(*lst);
+	new = ft_lstnew(tmp->content, tmp->content_size);
+	if (tmp->next)
 	{
-		new_node->content = (void*)malloc(content_size);
-		ft_memcpy(new_node->content, content, content_size);
-		new_node->content_size = content_size;
+		ft_lstmap(lst->next, &f);
+		new->next = lst->next;
 	}
-	else
-	{
-		new_node->content = NULL;
-		new_node->content_size = 0;
-	}
-	new_node->next = NULL;
-	return (new_node);
+	return (lst);
 }
