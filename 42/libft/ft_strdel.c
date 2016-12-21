@@ -6,11 +6,11 @@
 /*   By: vpetit <vpetit@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/14 14:53:05 by vpetit            #+#    #+#             */
-/*   Updated: 2016/12/19 17:25:16 by vpetit           ###   ########.fr       */
+/*   Updated: 2016/12/21 19:08:22 by vpetit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 void	ft_strdel(char **as)
 {

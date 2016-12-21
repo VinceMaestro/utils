@@ -6,9 +6,11 @@
 /*   By: vpetit <vpetit@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/08 17:01:48 by vpetit            #+#    #+#             */
-/*   Updated: 2016/12/12 15:37:42 by vpetit           ###   ########.fr       */
+/*   Updated: 2016/12/21 19:08:13 by vpetit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 char	*ft_strcat(char *restrict s1, const char *restrict s2)
 {

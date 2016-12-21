@@ -1,26 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strendl.c                                       :+:      :+:    :+:   */
+/*   ft_strnequ.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vpetit <vpetit@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/12/19 17:33:37 by vpetit            #+#    #+#             */
-/*   Updated: 2016/12/19 17:34:28 by vpetit           ###   ########.fr       */
+/*   Created: 2016/12/21 20:31:08 by vpetit            #+#    #+#             */
+/*   Updated: 2016/12/21 21:14:20 by vpetit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
-void	ft_putendl(char const *s)
+int		ft_strnequ(char const *s1, char const *s2, size_t n)
 {
-	int i;
+	size_t	i;
 
 	i = 0;
-	while (s[i] != '\0')
-	{
-		write(1, &s[i], 1);
+	while (s1[i] == s2[i] && s1[i] != '\0' && i < n)
 		i++;
-	}
-	write(1, "\n", 1);
+	if (s1[i] == '\0' || s2[i] == '\0' || s1[i] == s2[i])
+		return (1);
+	return (0);
 }

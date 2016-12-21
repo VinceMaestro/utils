@@ -6,7 +6,7 @@
 #    By: vpetit <vpetit@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/18 21:24:23 by vpetit            #+#    #+#              #
-#    Updated: 2016/12/21 18:37:30 by vpetit           ###   ########.fr        #
+#    Updated: 2016/12/21 22:43:02 by vpetit           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,8 +20,10 @@ SRC = ft_atoi \
 		ft_bzero \
 		ft_isalnum \
 		ft_isalpha \
+		ft_isascii \
 		ft_isdigit \
 		ft_isprint \
+		ft_itoa \
 		ft_lstadd \
 		ft_lstdel \
 		ft_lstdelone \
@@ -48,21 +50,33 @@ SRC = ft_atoi \
 		ft_sqrt \
 		ft_strcat \
 		ft_strchr \
+		ft_strclr \
 		ft_strcmp \
 		ft_strcpy \
 		ft_strdel \
 		ft_strdup \
-		ft_strendl \
+		ft_strequ \
+		ft_striter \
+		ft_striteri \
+		ft_strjoin \
 		ft_strlcat \
 		ft_strlen \
+		ft_strmap \
+		ft_strmapi \
 		ft_strncat \
 		ft_strncmp \
 		ft_strncpy \
+		ft_strnequ \
 		ft_strnew \
+		ft_strnstr \
 		ft_strrchr \
+		ft_strsplit \
 		ft_strstr \
+		ft_strsub \
+		ft_strtrim \
 		ft_tolower \
 		ft_toupper
+
 
 INCL = libft
 

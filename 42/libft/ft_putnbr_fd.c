@@ -6,11 +6,11 @@
 /*   By: vpetit <vpetit@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/19 17:27:34 by vpetit            #+#    #+#             */
-/*   Updated: 2016/12/19 17:28:28 by vpetit           ###   ########.fr       */
+/*   Updated: 2016/12/21 19:07:35 by vpetit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
 int		ft_putnbr_fd(int nbr, int fd)
 {

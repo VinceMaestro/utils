@@ -6,11 +6,11 @@
 /*   By: vpetit <vpetit@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/14 11:45:28 by vpetit            #+#    #+#             */
-/*   Updated: 2016/12/14 17:31:37 by vpetit           ###   ########.fr       */
+/*   Updated: 2016/12/21 19:07:06 by vpetit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 void	ft_memdel(void **ap)
 {
