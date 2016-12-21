@@ -6,16 +6,20 @@
 /*   By: vpetit <vpetit@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/20 15:16:40 by vpetit            #+#    #+#             */
-/*   Updated: 2016/12/20 15:54:22 by vpetit           ###   ########.fr       */
+/*   Updated: 2016/12/21 18:37:15 by vpetit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 void	ft_lstdel(t_list **alst, void (*del)(void*, size_t))
-	while (alst)
+{
+	t_list	*buff;
+
+	while (*alst)
 	{
+		buff = (*alst)->next;
 		ft_lstdelone(&(*alst), del);
-		alst = alst->next;
+		alst = &buff;
 	}
 }

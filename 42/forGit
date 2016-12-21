@@ -1,0 +1,4 @@
+git mergetool --tool opendiff
+CMD +S
+CMD +Q
+(option remote ou local)

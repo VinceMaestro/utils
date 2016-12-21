@@ -6,23 +6,26 @@
 /*   By: vpetit <vpetit@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/20 16:35:09 by vpetit            #+#    #+#             */
-/*   Updated: 2016/12/20 18:13:51 by vpetit           ###   ########.fr       */
+/*   Updated: 2016/12/21 18:27:08 by vpetit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
-void	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
+t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 {
-	t_list	new;
-	t_list	tmp;
+	t_list	*new;
+	t_list	*first;
 
-	tmp = f(*lst);
-	new = ft_lstnew(tmp->content, tmp->content_size);
-	if (tmp->next)
+	first = NULL;
+	new = f(lst);
+	while (lst->next)
 	{
-		ft_lstmap(lst->next, &f);
-		new->next = lst->next;
+		if (first == NULL)
+			first = new;
+		new->next = f(lst->next);
+		new = new->next;
+		lst = lst->next;
 	}
-	return (lst);
+	return (first);
 }
