@@ -6,7 +6,7 @@
 /*   By: vpetit <vpetit@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/23 22:47:42 by vpetit            #+#    #+#             */
-/*   Updated: 2016/12/22 11:49:09 by vpetit           ###   ########.fr       */
+/*   Updated: 2016/12/22 13:23:46 by vpetit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	*ft_memmove(void *dst, void const *src, size_t len)
 	size_t	i;
 
 	i = len;
-	if (*dst <= *src)
+	if (&dst <= (void**)&src)
 		ft_memcpy(dst, src, len);
 	else
 		while (i > 0)

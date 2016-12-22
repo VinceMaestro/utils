@@ -6,7 +6,7 @@
 /*   By: vpetit <vpetit@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/21 20:31:51 by vpetit            #+#    #+#             */
-/*   Updated: 2016/12/22 10:39:27 by vpetit           ###   ########.fr       */
+/*   Updated: 2016/12/22 13:48:55 by vpetit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,12 @@ char		**ft_strsplit(char const *s, char c)
 			buff_len++;
 		else if (buff_len != 0)
 		{
-			ft_strncpy(&(tab[tab_i]), &(s[i - (int)buff_len]), buff_len);
+			ft_strncpy(tab[tab_i], &s[i - (int)buff_len], buff_len);
 			tab_i++;
 			buff_len = 0;
 		}
 		i++;
 	}
-	tab[tab_i] = '\0';
+	tab[tab_i][0] = '\0';
 	return (tab);
 }

@@ -6,7 +6,7 @@
 /*   By: vpetit <vpetit@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/21 20:31:41 by vpetit            #+#    #+#             */
-/*   Updated: 2016/12/22 10:09:38 by vpetit           ###   ########.fr       */
+/*   Updated: 2016/12/22 13:34:30 by vpetit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,16 +20,16 @@ char		*ft_strtrim(char const *s)
 
 	start = 0;
 	stop = ft_strlen(s);
-	while ((s[start] == " " || s[start] == "\n" || s[start] == "\t") \
+	while ((s[start] == ' ' || s[start] == '\n' || s[start] == '\t') \
 	&& s[start] != '\0')
 		start++;
-	while ((s[stop] == " " || s[stop] == "\n" || s[stop] == "\t") && stop > 0)
+	while ((s[stop] == ' ' || s[stop] == '\n' || s[stop] == '\t') && stop > 0)
 		stop--;
 	if (start < stop)
 	{
 		new = (char*)malloc(sizeof(new) * (stop - start + 1));
 		if (new)
-			ft_strncpy(new, s[start], stop - start);
+			ft_strncpy(new, &(s[start]), stop - start);
 		else
 			return (new);
 	}
