@@ -6,7 +6,7 @@
 /*   By: vpetit <vpetit@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/08 17:39:31 by vpetit            #+#    #+#             */
-/*   Updated: 2016/12/12 15:37:35 by vpetit           ###   ########.fr       */
+/*   Updated: 2016/12/22 17:30:00 by vpetit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ size_t	ft_strlcat(char *restrict dst, const char *restrict src, size_t size)
 	int	i1;
 	int	i2;
 
+	//unsigned char
 	i1 = 0;
 	i2 = 0;
 	while (dst[i1] != 0)
