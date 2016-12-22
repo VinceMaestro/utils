@@ -6,7 +6,7 @@
 /*   By: vpetit <vpetit@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/21 20:31:51 by vpetit            #+#    #+#             */
-/*   Updated: 2016/12/21 23:49:21 by vpetit           ###   ########.fr       */
+/*   Updated: 2016/12/22 10:39:27 by vpetit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,27 @@
 
 char		**ft_strsplit(char const *s, char c)
 {
-	int	i;
+	int		i;
+	size_t	buff_len;
+	char	**tab;
+	int		tab_i;
 
+	tab = (char**)malloc(sizeof(tab) * (ft_strlen(s) + 1));
+	tab_i = 0;
 	i = 0;
+	buff_len = 0;
 	while (s[i] != '\0')
 	{
-		while
+		if (s[i] != c)
+			buff_len++;
+		else if (buff_len != 0)
 		{
-			s[i]
-
-
-			// A FINIR !!!!!!
+			ft_strncpy(&(tab[tab_i]), &(s[i - (int)buff_len]), buff_len);
+			tab_i++;
+			buff_len = 0;
 		}
+		i++;
 	}
-
+	tab[tab_i] = '\0';
+	return (tab);
 }
