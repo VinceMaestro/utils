@@ -6,7 +6,7 @@
 /*   By: vpetit <vpetit@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/23 23:17:20 by vpetit            #+#    #+#             */
-/*   Updated: 2016/12/22 14:58:20 by vpetit           ###   ########.fr       */
+/*   Updated: 2016/12/27 23:03:41 by vpetit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,15 @@
 
 void	*ft_memchr(void const *s, int c, size_t n)
 {
-	size_t			i;
-	unsigned char	*ret;
-	unsigned char	converter;
+	size_t	i;
+	char	*conv_s;
 
-	converter = '\0';
 	i = 0;
+	conv_s = (char*)s;
 	while (i < n)
 	{
-		if (((unsigned char*)s)[i] == (converter + c))
-		{
-			ret = &((unsigned char*)s)[i];
-			return (ret);
-		}
+		if ((conv_s[i]) == (char)c)
+			return (&conv_s[i]);
 		i++;
 	}
 	return (NULL);

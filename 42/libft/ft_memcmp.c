@@ -6,7 +6,7 @@
 /*   By: vpetit <vpetit@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/24 00:20:20 by vpetit            #+#    #+#             */
-/*   Updated: 2016/12/22 16:26:34 by vpetit           ###   ########.fr       */
+/*   Updated: 2016/12/27 11:31:19 by vpetit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,12 @@ int	ft_memcmp(void const *s1, void const *s2, size_t n)
 	i = 0;
 	conv_s1 = (unsigned char*)s1;
 	conv_s2 = (unsigned char*)s2;
-	while (i < n && conv_s1[i] < conv_s2[i])
-		i++;
-	return (conv_s1[i] - conv_s2[i]);
+	if (n == 0)
+		return (0);
+	else
+	{
+		while (i < n - 1 && conv_s1[i] == conv_s2[i])
+			i++;
+		return (conv_s1[i] - conv_s2[i]);
+	}
 }

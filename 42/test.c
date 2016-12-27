@@ -3,7 +3,7 @@
 
 int	 main(void)
 {
-	printf("%i\n", atoi("  \t\n  \r\r\v\f-899"));
-	printf("%i\n", ft_atoi("  \t\n  \r\r\v\f-899"));
+	//printf("real is : %i\n", strtrim("\t\n  \tAAA \t BBB\t\n  \t"));
+	printf("your's is : %i\n", strcmp(ft_strtrim("\t\n  \tAAA \t BBB\t\n  \t"), "AAA \t BBB"));
 	return (0);
 }

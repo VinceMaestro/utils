@@ -5,36 +5,40 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: vpetit <vpetit@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/12/21 20:31:41 by vpetit            #+#    #+#             */
-/*   Updated: 2016/12/22 13:34:30 by vpetit           ###   ########.fr       */
+/*   Created: 2016/12/27 17:58:09 by vpetit            #+#    #+#             */
+/*   Updated: 2016/12/27 20:51:05 by vpetit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
+#include <stdlib.h>
 #include "libft.h"
 
-char		*ft_strtrim(char const *s)
+char	*ft_strtrim(char const *s)
 {
-	int		start;
-	int		stop;
-	char	*new;
+	size_t	start;
+	size_t	end;
+	char	*fresh;
 
 	start = 0;
-	stop = ft_strlen(s);
-	while ((s[start] == ' ' || s[start] == '\n' || s[start] == '\t') \
-	&& s[start] != '\0')
+	end = ft_strlen(s) - 1;
+	if (s == NULL)
+		return (NULL);
+	while (s[start] == ' ' || s[start] == '\n' || s[start] == '\t')
 		start++;
-	while ((s[stop] == ' ' || s[stop] == '\n' || s[stop] == '\t') && stop > 0)
-		stop--;
-	if (start < stop)
+	if (end == 0 || start == end + 1)
 	{
-		new = (char*)malloc(sizeof(new) * (stop - start + 1));
-		if (new)
-			ft_strncpy(new, &(s[start]), stop - start);
-		else
-			return (new);
+		fresh = (char *)malloc(1);
+		*fresh = '\0';
+		return (fresh);
 	}
-	else
-		new = (char*)malloc(sizeof(new));
-	new[stop] = '\0';
-	return (new);
+	while (s[end] == ' ' || s[end] == '\n' || s[end] == '\t')
+		end--;
+	fresh = (char *)malloc(sizeof(char) * (end - start + 2));
+	if (fresh != NULL)
+	{
+		printf("mine : %s\n", ft_strncpy(fresh, &s[start], end - start + 1));
+		fresh[end - start + 1] = '\0';
+	}
+	return (fresh);
 }
