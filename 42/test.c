@@ -1,20 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   test.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vpetit <vpetit@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/12/11 20:43:35 by vpetit            #+#    #+#             */
-/*   Updated: 2016/12/28 11:46:07 by vpetit           ###   ########.fr       */
+/*   Created: 2016/12/28 11:35:26 by vpetit            #+#    #+#             */
+/*   Updated: 2016/12/28 11:43:40 by vpetit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
 #include "libft.h"
+#include <ctype.h>
 
-int	ft_isalnum(int c)
+int	main(void)
 {
-	if ((c >= 48 && c <= 57) || (c >= 65 && c <= 90) || (c >= 97 && c <= 122))
-		return (1);
+	int i;
+
+	i = -1;
+	while (i < 530)
+	{
+		if (ft_isdigit(i) != isdigit(i))
+			printf("%c does not work ", i);
+		i++;
+	}
 	return (0);
 }

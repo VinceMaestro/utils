@@ -6,39 +6,61 @@
 /*   By: vpetit <vpetit@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/11 18:35:09 by vpetit            #+#    #+#             */
-/*   Updated: 2016/12/27 18:05:18 by vpetit           ###   ########.fr       */
+/*   Updated: 2016/12/28 16:42:08 by vpetit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
-int	ft_atoi(const char *str)
+static int	ft_isblank(char c)
+{
+	if (c == ' ' || c == '\n' || c == '\t' \
+		|| c == '\r' || c == '\v' || c == '\f')
+		return (1);
+	return (0);
+}
+
+static int	ft_strtoint(char *str)
+{
+	int	ret;
+
+	ret = 0;
+	while (*str++)
+	{
+		if (!ft_isdigit(*str))
+			return (0);
+		ret *= 10;
+		ret += *str;
+	}
+	printf("%i\n", ret);
+	return (ret);
+}
+
+int			ft_atoi(const char *str)
 {
 	int		i;
-	int		buff;
+	char	*buff;
 	char	sign;
 
-	sign = 'u';
 	i = 0;
-	buff = 0;
-	while (str[i] != '\0')
+	buff = NULL;
+	if (str)
 	{
-		if (str[i] >= 48 && str[i] <= 57)
+		while (*str++)
 		{
-			if (i > 0)
-				buff *= 10;
-			buff += (str[i] - 48);
+			if (!sign && (*str == '+' || *str == '-'))
+				sign = *str;
+			else if (ft_isdigit(*str))
+			{
+				buff[i] = (char)*str;
+				i++;
+			}
+			else if (sign == '-' && !ft_isblank(*str))
+				return (-ft_strtoint(buff));
+			else
+				return (ft_strtoint(buff));
 		}
-		else if (buff > 0)
-			return (buff);
-		else if ((str[i] == '-' || str[i] == '+') && sign == 'u')
-			sign = str[i];
-		else if (str[i] != ' ' && str[i] != '\n' && str[i] != '\t' \
-			&& str[i] != '\r' && str[i] != '\v' && str[i] != '\f')
-			return (0);
-		i++;
 	}
-	if (sign == '-')
-		return (-buff);
-	return (buff);
+	return (ft_strtoint(buff));
 }

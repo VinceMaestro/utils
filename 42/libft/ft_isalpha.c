@@ -6,7 +6,7 @@
 /*   By: vpetit <vpetit@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/11 20:07:29 by vpetit            #+#    #+#             */
-/*   Updated: 2016/12/21 19:06:33 by vpetit           ###   ########.fr       */
+/*   Updated: 2016/12/28 11:40:42 by vpetit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,7 @@
 
 int	ft_isalpha(int c)
 {
-	if (c >= 65 && c <= 90)
-		return (c + 32);
-	else if (c >= 97 && c <= 122)
-		return (c - 32);
+	if (ft_tolower(c) != c || ft_toupper(c) != c)
+		return (1);
 	return (0);
 }

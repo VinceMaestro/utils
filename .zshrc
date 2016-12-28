@@ -40,19 +40,20 @@ zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 #alias switch_to_us='setxkbmap us'
 alias ls='ls -la'
 alias gcc='gcc -Wall -Werror -Wextra'
+alias cfbd='norminette -R CheckForbiddenSourceHeader'
+alias atom='open -a Atom'
+alias 42fc='bash ~/prog/git/42/42FileChecker/42FileChecker.sh'
+alias mac='bash ~/prog/git/42/MAC.sh'
+alias hi='fortune | cowsay | lolcat'
+alias grf='git checkout master && git fetch upstream && git rebase upstream/master && git checkout dev && git rebase upstream/dev'
 #alias open='xdg-open'
 alias shutdown='sudo shutdown -h now'
 alias reboot='sudo shutdown -r now'
 #alias Elsa='ssh -p 4242 109.16.254.135'
 #alias Alice='ssh -p 8888 109.16.254.135'
 #alias Ariel='ssh -p 6666 109.16.254.135'
-alias hi='fortune | cowsay | lolcat'
-alias grf='git checkout master && git fetch upstream && git rebase upstream/master && git checkout dev && git rebase upstream/dev'
-alias 42fc='bash ~/prog/git/42/42FileChecker/42FileChecker.sh'
-alias mac='bash ~/prog/git/42/MAC.sh'
 
-#To access 42 files
-CDPATH=/Users/Mads/prog
+CDPATH=~/prog
 
 hi
 

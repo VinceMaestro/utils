@@ -6,7 +6,7 @@
 /*   By: vpetit <vpetit@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/08 19:24:58 by vpetit            #+#    #+#             */
-/*   Updated: 2016/12/19 17:36:01 by vpetit           ###   ########.fr       */
+/*   Updated: 2016/12/28 11:06:09 by vpetit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,18 @@ char	*ft_strrchr(char const *s, int c)
 	char	*buff;
 
 	i = 0;
-	while (s[i] != '\0')
+	if (*s)
 	{
-		if (s[i] == c)
+		while (s[i] != '\0')
 		{
-			buff = (char*)&s[i];
+			if (s[i] == c)
+				buff = (char*)&s[i];
+			i++;
 		}
-		i++;
+		if (s[i] == c)
+			buff = (char*)&s[i];
 	}
+	else
+		buff = NULL;
 	return (buff);
 }

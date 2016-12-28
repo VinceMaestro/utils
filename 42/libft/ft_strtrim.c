@@ -6,7 +6,7 @@
 /*   By: vpetit <vpetit@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/27 17:58:09 by vpetit            #+#    #+#             */
-/*   Updated: 2016/12/27 20:51:05 by vpetit           ###   ########.fr       */
+/*   Updated: 2016/12/28 10:55:34 by vpetit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ char	*ft_strtrim(char const *s)
 	fresh = (char *)malloc(sizeof(char) * (end - start + 2));
 	if (fresh != NULL)
 	{
-		printf("mine : %s\n", ft_strncpy(fresh, &s[start], end - start + 1));
+		ft_strncpy(fresh, &s[start], end - start + 1);
 		fresh[end - start + 1] = '\0';
 	}
 	return (fresh);
