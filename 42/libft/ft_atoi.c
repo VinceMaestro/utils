@@ -6,7 +6,7 @@
 /*   By: vpetit <vpetit@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/11 18:35:09 by vpetit            #+#    #+#             */
-/*   Updated: 2016/12/28 16:42:08 by vpetit           ###   ########.fr       */
+/*   Updated: 2016/12/28 19:43:56 by vpetit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,46 +21,31 @@ static int	ft_isblank(char c)
 	return (0);
 }
 
-static int	ft_strtoint(char *str)
-{
-	int	ret;
-
-	ret = 0;
-	while (*str++)
-	{
-		if (!ft_isdigit(*str))
-			return (0);
-		ret *= 10;
-		ret += *str;
-	}
-	printf("%i\n", ret);
-	return (ret);
-}
-
 int			ft_atoi(const char *str)
 {
-	int		i;
-	char	*buff;
-	char	sign;
+	int				i;
+	int				sign;
+	unsigned long	buff;
 
 	i = 0;
-	buff = NULL;
+	sign = 1;
+	buff = 0;
 	if (str)
 	{
-		while (*str++)
+		while (ft_isblank(str[i]))
+			i++;
+		if (str[i] == '-')
+			sign = -1;
+		if (str[i] == '+' || str[i] == '-')
+			i++;
+		while (ft_isdigit(str[i]))
 		{
-			if (!sign && (*str == '+' || *str == '-'))
-				sign = *str;
-			else if (ft_isdigit(*str))
-			{
-				buff[i] = (char)*str;
-				i++;
-			}
-			else if (sign == '-' && !ft_isblank(*str))
-				return (-ft_strtoint(buff));
-			else
-				return (ft_strtoint(buff));
+			buff = buff * 10 + str[i];
+			i++;
 		}
+		if (buff > sizeof(int))
+			return (0);
+		return (sign * (int)buff);
 	}
-	return (ft_strtoint(buff));
+	return (0);
 }
