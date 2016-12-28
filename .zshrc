@@ -52,7 +52,6 @@ alias 42fc='bash ~/prog/git/42/42FileChecker/42FileChecker.sh'
 alias mac='bash ~/prog/git/42/MAC.sh'
 
 #To access 42 files
-#To access maestro files
 CDPATH=/Users/Mads/prog
 
 hi
