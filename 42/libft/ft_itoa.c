@@ -6,41 +6,47 @@
 /*   By: vpetit <vpetit@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/21 20:32:06 by vpetit            #+#    #+#             */
-/*   Updated: 2016/12/22 13:50:24 by vpetit           ###   ########.fr       */
+/*   Updated: 2016/12/29 20:38:10 by vpetit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
 #include "libft.h"
-
-static int	ft_len(int len)
-{
-	int	i;
-
-	i = 0;
-	while (len % 10 != len)
-	{
-		len = len / 10;
-		i++;
-	}
-	return (i);
-}
 
 char		*ft_itoa(int n)
 {
-	int		i;
-	int		len;
-	int		n_cp;
-	char	*buff;
+	static size_t	len;
+	size_t			isneg;
+	long int		nbr;
+	static char		*number;
 
-	i = 0;
-	n_cp = n;
-	len = ft_len(n_cp);
-	buff = (char*)malloc(sizeof(buff) * (len + 1));
-	while (i < len)
+	if (!len)
+		len = 0;
+	isneg = 0;
+	nbr = n;
+	number = NULL;
+	if (nbr < 0 && nbr >= 2147483648)
 	{
-		buff[len - i] = '0' + (n_cp % 10);
-		i++;
-		n_cp = n_cp / 10;
+		nbr *= -1;
+		len++;
+		isneg = 1;
 	}
-	return (buff);
+	if (nbr % 10 != nbr)
+	{
+		len++;
+		ft_itoa(nbr / 10);
+	}
+	if (nbr % 10 == nbr)
+	{
+		len++;
+		number = (char *)malloc(len + 1);
+		if (number == NULL)
+			return (NULL);
+		number[len] = '\0';
+	}
+	*number = (nbr % 10 + '0');
+	number++;
+	if (isneg)
+		number[0] = '-';
+	return (number - len);
 }

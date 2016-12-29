@@ -6,7 +6,7 @@
 #    By: vpetit <vpetit@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/18 21:24:23 by vpetit            #+#    #+#              #
-#    Updated: 2016/12/21 22:43:02 by vpetit           ###   ########.fr        #
+#    Updated: 2016/12/29 17:22:33 by vpetit           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -83,8 +83,8 @@ INCL = libft
 all: $(NAME)
 
 $(NAME): $(foreach element,$(SRC), $(SRC_DIR)/$(element).c)
-	gcc -Wall -Werror -Wextra -c $^ -I$(INCL_DIR)
-	ar -rc $@ $(foreach element,$(SRC), $(element).o)
+	@gcc -Wall -Werror -Wextra -c $^ -I$(INCL_DIR)
+	@ar -rc $@ $(foreach element,$(SRC), $(element).o)
 
 clean:
 	@/bin/rm -f $(foreach element,$(SRC), $(element).o)
