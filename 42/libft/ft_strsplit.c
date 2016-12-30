@@ -6,7 +6,7 @@
 /*   By: vpetit <vpetit@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/21 20:31:51 by vpetit            #+#    #+#             */
-/*   Updated: 2016/12/29 20:28:10 by vpetit           ###   ########.fr       */
+/*   Updated: 2016/12/30 14:55:48 by vpetit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ char		**ft_strsplit(char const *s, char c)
 	if (s)
 	{
 		dict_word = (char**)malloc(sizeof(char*) * (ft_number_words(s, c) + 1));
-		if (ft_number_words(s, c) > 0)
+		if (ft_number_words(s, c) > 0 && dict_word)
 		{
 			while (s[current_letter])
 			{
@@ -49,7 +49,7 @@ char		**ft_strsplit(char const *s, char c)
 					first_letter = current_letter;
 				else if (s[current_letter] == c && first_letter)
 				{
-					dict_word[word] = ft_strsub(s, first_letter, current_letter - first_letter);
+					dict_word[word] = ft_strsub(s, first_letter, current_letter - 1 - first_letter);
 					// dict_word[word] = ft_memalloc(current_letter - first_letter);
 					// ft_memcpy(&dict_word[word], &s[first_letter], \
 					// 	current_letter - first_letter - 1);

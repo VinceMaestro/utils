@@ -6,24 +6,17 @@
 /*   By: vpetit <vpetit@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/28 11:35:26 by vpetit            #+#    #+#             */
-/*   Updated: 2016/12/28 11:43:40 by vpetit           ###   ########.fr       */
+/*   Updated: 2016/12/30 18:43:46 by vpetit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include "libft.h"
-#include <ctype.h>
 
 int	main(void)
 {
-	int i;
-
-	i = -1;
-	while (i < 530)
-	{
-		if (ft_isdigit(i) != isdigit(i))
-			printf("%c does not work ", i);
-		i++;
-	}
+	if (ft_atoi("--132") != atoi("--132"))
+		printf("%i does not work ", ft_atoi("--132"));
+		printf("%i Should be :  ", atoi("--132"));
 	return (0);
 }
