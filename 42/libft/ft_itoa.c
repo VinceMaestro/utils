@@ -6,11 +6,10 @@
 /*   By: vpetit <vpetit@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/21 20:32:06 by vpetit            #+#    #+#             */
-/*   Updated: 2016/12/31 02:17:04 by Mads             ###   ########.fr       */
+/*   Updated: 2016/12/31 02:24:17 by Mads             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include "libft.h"
 
 // char		*ft_itoa(int n)
@@ -94,7 +93,6 @@ char		*ft_itoa(int n)
 		buff[pos--] = 0;
 		buff[pos] = '0';
 	}
-	printf(" your number is %s\n" , buff);
 	return (buff);
 }
 

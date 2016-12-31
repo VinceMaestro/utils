@@ -6,20 +6,11 @@
 /*   By: vpetit <vpetit@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/11 18:35:09 by vpetit            #+#    #+#             */
-/*   Updated: 2016/12/30 18:47:49 by vpetit           ###   ########.fr       */
+/*   Updated: 2016/12/31 03:59:02 by Mads             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-
-static int	ft_isblank(char c)
-{
-	if (c == ' ' || c == '\n' || c == '\t' \
-		|| c == '\r' || c == '\v' || c == '\f')
-		return (1);
-	return (0);
-}
 
 static int	ft_check_to_long_input(long int number, char letter, int sign)
 {

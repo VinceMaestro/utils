@@ -6,7 +6,7 @@
 /*   By: vpetit <vpetit@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/22 17:07:18 by vpetit            #+#    #+#             */
-/*   Updated: 2016/12/22 14:35:03 by vpetit           ###   ########.fr       */
+/*   Updated: 2016/12/31 03:55:13 by Mads             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,5 +86,6 @@ char		*ft_strjoin(char const *s1, char const *s2);
 char		*ft_strtrim(char const *s);
 char		**ft_strsplit(char const *s, char c);
 char		*ft_itoa(int n);
+int			ft_isblank(char c);
 
 #endif
