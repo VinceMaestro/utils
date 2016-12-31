@@ -6,7 +6,7 @@
 /*   By: vpetit <vpetit@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/21 20:32:06 by vpetit            #+#    #+#             */
-/*   Updated: 2016/12/30 22:00:19 by vpetit           ###   ########.fr       */
+/*   Updated: 2016/12/31 02:17:04 by Mads             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,8 +53,8 @@
 
 static int	ft_int_len(int n, int len)
 {
-	if (n)
-		n % 10 != n ? ft_int_len(n / 10, len++) : len;
+	if (n && (n % 10 != n))
+		((n % 10 != n) ? (len = ft_int_len(n / 10, (len + 1))) : (len = len + 1));
 	return (len);
 }
 
@@ -64,29 +64,32 @@ char		*ft_itoa(int n)
 	char		*buff;
 	char		isneg;
 	int			end;
-	int			i;
+	long int	n2;
 
-	i = 0;
+	n2 = (long int)n;
 	end = 0;
 	isneg = '+';
-	if (n)
+	if (n2 && n2 <= 2147483647 && n2 >= -2147483648)
 	{
-		((n < 0) ? (isneg = '-') : (isneg = '+'));
-		((n < 0) ? (n = -n) : n);
-		((isneg == '-') ? (pos = ft_int_len(n, 1)) : (pos = ft_int_len(n, 0)));
+		((n2 < 0) ? (isneg = '-') : (isneg = '+'));
+		((n2 < 0) ? (n2 = -n2) : n2);
+		((isneg == '-') ? (pos = ft_int_len(n2, 2)) : (pos = ft_int_len(n2, 1)));
 		buff = (char*)malloc(sizeof(char) * (pos + 1));
+		if (!buff)
+			return (NULL);
 		buff[pos--] = 0;
 		((isneg == '-') ? (buff[0] = '-') : (buff[pos]));
 		while (end != 1)
 		{
-			buff[pos] = n % 10 + '0';
-			pos--;
-			((n % 10 == n) ? (end = 1) : (n = n / 10));
+			buff[pos--] = n2 % 10 + '0';
+			((n2 % 10 == n2) ? (end = 1) : (n2 = n2 / 10));
 		}
 	}
 	else
 	{
 		buff = (char*)malloc(sizeof(char) * 2);
+		if (!buff)
+			return (NULL);
 		pos = 1;
 		buff[pos--] = 0;
 		buff[pos] = '0';
@@ -95,24 +98,17 @@ char		*ft_itoa(int n)
 	return (buff);
 }
 
-int	main(void)
-{
-	char *i1 = ft_itoa(-623);
-	char *i2 = ft_itoa(156);
-	char *i3 = ft_itoa(-0);
-
-	if (strcmp(i1, "-623"))
-	{
-		printf(" your number is - %s - should be - -623 -\n", i1);
-	}
-	if (strcmp(i2, "156"))
-	{
-		printf(" your number is - %s - should be - 156 -\n", i2);
-	}
-	if (strcmp("0", i3))
-	{
-		printf(" your number is - %s - should be - 0 -\n", i3);
-	}
-	// printf(" your number is %s\n" , ft_itoa(123456000));
-	return (0);
-}
+// int	main(void)
+// {
+// 	char *i1 = ft_itoa((-2147483647 -1));
+//
+// 	if (atoi(i1) != (-2147483647 -1))
+// 		printf(" your number is %s Should be : %i\n", ft_itoa(-2147483647 - 1), atoi(i1));
+// // 	char *i1 = ft_itoa(-623);
+// //
+// // 	if (strcmp(i1, "-623"))
+// // 	{
+// // 		printf(" your number is - %s - should be - -623 -\n", i1);
+// // 	}
+// 	return (0);
+// }
