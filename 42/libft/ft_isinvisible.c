@@ -6,16 +6,16 @@
 /*   By: vpetit <vpetit@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/31 16:47:03 by vpetit            #+#    #+#             */
-/*   Updated: 2016/12/31 16:47:29 by vpetit           ###   ########.fr       */
+/*   Updated: 2016/12/31 17:43:31 by vpetit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isinvisible(char c)
+int	ft_isinvisible(int c)
 {
-	if (c == ' ' || c == '\n' || c == '\t' \
-		|| c == '\r' || c == '\v' || c == '\f')
+	if (c == (int)' ' || c == (int)'\n' || c == (int)'\t' \
+		|| c == (int)'\r' || c == (int)'\v' || c == (int)'\f')
 		return (1);
 	return (0);
 }

@@ -6,15 +6,17 @@
 /*   By: vpetit <vpetit@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/31 11:10:36 by vpetit            #+#    #+#             */
-/*   Updated: 2016/12/31 16:47:34 by vpetit           ###   ########.fr       */
+/*   Updated: 2016/12/31 18:29:31 by vpetit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
+#include <ctype.h>
 
-int	ft_isblank(char c)
+int	ft_isblank(int c)
 {
-	if (c == ' ' || c == '\t')
+	if (c == (int)' ' || c == (int)'\t')
 		return (1);
 	return (0);
 }

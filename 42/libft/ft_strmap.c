@@ -6,7 +6,7 @@
 /*   By: vpetit <vpetit@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/21 20:30:32 by vpetit            #+#    #+#             */
-/*   Updated: 2016/12/28 20:28:47 by vpetit           ###   ########.fr       */
+/*   Updated: 2016/12/31 19:23:20 by vpetit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,15 @@ char	*ft_strmap(char const *s, char (*f)(char))
 	i = 0;
 	if (buff)
 	{
-		while (s[i])
+		if (s && f)
 		{
-			buff[i] = f(s[i]);
-			i++;
+			while (s[i])
+			{
+				buff[i] = f(s[i]);
+				i++;
+			}
+			buff[i] = '\0';
 		}
-		buff[i] = '\0';
 	}
 	return (buff);
 }
