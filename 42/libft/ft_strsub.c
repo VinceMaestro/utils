@@ -6,7 +6,7 @@
 /*   By: vpetit <vpetit@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/21 20:31:20 by vpetit            #+#    #+#             */
-/*   Updated: 2016/12/21 21:14:15 by vpetit           ###   ########.fr       */
+/*   Updated: 2016/12/31 01:04:32 by Mads             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,15 +18,15 @@ char	*ft_strsub(char const *s, unsigned int start, size_t len)
 	char	*new;
 
 	i = 0;
-	new = (char*)malloc(sizeof(*new) * (len + 1));
-	if (new)
+	new = NULL;
+	if (*s)
 	{
-		while (i < len)
-		{
-			new[i] = s[start + (unsigned int)i];
-			i++;
-		}
-		new[i] = '\0';
+		new = ft_memalloc(len + 1);
+		if (new)
+			ft_memcpy(new, &s[start], len);
+		else
+			return (new);
+		new[len] = '\0';
 	}
 	return (new);
 }
