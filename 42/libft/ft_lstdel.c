@@ -6,12 +6,11 @@
 /*   By: vpetit <vpetit@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/20 15:16:40 by vpetit            #+#    #+#             */
-/*   Updated: 2016/12/31 03:59:36 by Mads             ###   ########.fr       */
+/*   Updated: 2016/12/31 11:11:29 by vpetit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-//#include <stdio.h>
 
 void	ft_lstdel(t_list **alst, void (*del)(void*, size_t))
 {
@@ -24,23 +23,3 @@ void	ft_lstdel(t_list **alst, void (*del)(void*, size_t))
 		*alst = buff;
 	}
 }
-
-// void	ft_delete(void *content, size_t size)
-// {
-// 	if (content)
-// 		free(content);
-// 	content = NULL;
-// 	size = 0;
-// }
-//
-// int	main(void)
-// {
-// 	t_list *l = ft_lstnew(strdup("nyancat"), 8);
-//
-// 	l->next = ft_lstnew(strdup("#TEST#"), 7);
-// 	ft_lstdel(&l, *ft_delete);
-// 	write(2, "", 1);
-// 	if (!l)
-// 		printf("SUCCESS");
-// 	printf("FAIL : ");
-// }

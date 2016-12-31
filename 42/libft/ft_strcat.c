@@ -6,7 +6,7 @@
 /*   By: vpetit <vpetit@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/08 17:01:48 by vpetit            #+#    #+#             */
-/*   Updated: 2016/12/21 19:08:13 by vpetit           ###   ########.fr       */
+/*   Updated: 2016/12/31 11:15:36 by vpetit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,7 @@ char	*ft_strcat(char *restrict s1, const char *restrict s2)
 	i1 = 0;
 	i2 = 0;
 	while (s1[i1] != '\0')
-	{
 		i1++;
-	}
 	while (s2[i2] != '\0')
 	{
 		s1[i1] = s2[i2];

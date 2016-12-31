@@ -6,7 +6,7 @@
 /*   By: vpetit <vpetit@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/23 18:00:23 by vpetit            #+#    #+#             */
-/*   Updated: 2016/12/31 03:59:47 by Mads             ###   ########.fr       */
+/*   Updated: 2016/12/31 11:19:50 by vpetit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ static int	ft_putnbr_neg(long int nbr)
 	return (0);
 }
 
-int		ft_putnbr(int nbr)
+int			ft_putnbr(int nbr)
 {
 	long int	buff;
 
@@ -34,33 +34,3 @@ int		ft_putnbr(int nbr)
 	write(1, &buff, 1);
 	return (0);
 }
-
-// int	main(void)
-// {
-// 	ft_putnbr(15000);
-// 	return (0);
-// }
-//
-// int		ft_putnbr(int nbr)
-// {
-// 	long	conv_nbr;
-// 	char	buff;
-//
-// 	if (nbr > )
-// 	conv_nbr = (long)nbr;
-// 	printf("%li", conv_nbr);
-// 	if (conv_nbr < 0)
-// 	{
-// 		write(1, (const void*)45, 1);
-// 		conv_nbr = -conv_nbr;
-// 	}
-// 	while (conv_nbr % 10 != conv_nbr)
-// 	{
-// 		buff = 48 + conv_nbr % 10;
-// 		conv_nbr = conv_nbr / 10;
-// 		ft_putchar(buff);
-// 	}
-// 	buff = 48 + conv_nbr % 10;
-// 	ft_putchar(buff);
-// 	return (0);
-// }

@@ -6,7 +6,7 @@
 /*   By: vpetit <vpetit@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/24 02:05:39 by vpetit            #+#    #+#             */
-/*   Updated: 2016/12/12 15:37:38 by vpetit           ###   ########.fr       */
+/*   Updated: 2016/12/31 11:16:02 by vpetit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,6 @@ char	*ft_strcpy(char *dst, char const *src)
 		i++;
 	}
 	if (src[i] == '\0')
-	{
 		dst[i] = '\0';
-	}
 	return (dst);
 }

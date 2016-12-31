@@ -6,7 +6,7 @@
 #    By: vpetit <vpetit@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/18 21:24:23 by vpetit            #+#    #+#              #
-#    Updated: 2016/12/31 03:55:34 by Mads             ###   ########.fr        #
+#    Updated: 2016/12/31 16:52:37 by vpetit           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -76,7 +76,8 @@ SRC = ft_atoi \
 		ft_strtrim \
 		ft_tolower \
 		ft_toupper \
-		ft_isblank
+		ft_isblank \
+		ft_isinvisible
 
 INCL = libft
 

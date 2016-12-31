@@ -1,36 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_isinvisible.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vpetit <vpetit@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/08 10:31:04 by vpetit            #+#    #+#             */
-/*   Updated: 2016/12/31 11:16:12 by vpetit           ###   ########.fr       */
+/*   Created: 2016/12/31 16:47:03 by vpetit            #+#    #+#             */
+/*   Updated: 2016/12/31 16:47:29 by vpetit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(char const *s1)
+int	ft_isinvisible(char c)
 {
-	char	*s1_copy;
-	int		s1_len;
-	int		i;
-
-	s1_len = 0;
-	i = 0;
-	while (s1[s1_len] != '\0')
-		s1_len += 1;
-	s1_copy = (char*)malloc(sizeof(*s1_copy) * (s1_len + 1));
-	if (s1_copy != NULL)
-	{
-		while (i < s1_len)
-		{
-			s1_copy[i] = s1[i];
-			i += 1;
-		}
-		s1_copy[i] = '\0';
-	}
-	return (s1_copy);
+	if (c == ' ' || c == '\n' || c == '\t' \
+		|| c == '\r' || c == '\v' || c == '\f')
+		return (1);
+	return (0);
 }

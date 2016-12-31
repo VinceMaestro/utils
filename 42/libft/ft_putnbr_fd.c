@@ -6,7 +6,7 @@
 /*   By: vpetit <vpetit@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/19 17:27:34 by vpetit            #+#    #+#             */
-/*   Updated: 2016/12/31 03:38:45 by Mads             ###   ########.fr       */
+/*   Updated: 2016/12/31 11:19:58 by vpetit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ static int	ft_putnbr_neg_fd(long int nbr, int fd)
 	return (0);
 }
 
-int		ft_putnbr_fd(int nbr, int fd)
+int			ft_putnbr_fd(int nbr, int fd)
 {
 	long int	buff;
 

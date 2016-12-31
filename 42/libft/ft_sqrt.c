@@ -6,7 +6,7 @@
 /*   By: vpetit <vpetit@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/07 19:57:17 by vpetit            #+#    #+#             */
-/*   Updated: 2016/12/21 19:08:06 by vpetit           ###   ########.fr       */
+/*   Updated: 2016/12/31 11:15:15 by vpetit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,19 +18,10 @@ int		ft_sqrt(int nb)
 
 	a = 0;
 	if (nb < 0)
-	{
 		return (0);
-	}
 	while (a * a < nb)
-	{
 		a += 1;
-	}
 	if (a * a == nb)
-	{
 		return (a);
-	}
-	else
-	{
-		return (0);
-	}
+	return (0);
 }

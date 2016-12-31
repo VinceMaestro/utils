@@ -6,7 +6,7 @@
 /*   By: vpetit <vpetit@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/11 18:35:09 by vpetit            #+#    #+#             */
-/*   Updated: 2016/12/31 03:59:02 by Mads             ###   ########.fr       */
+/*   Updated: 2016/12/31 16:48:02 by vpetit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ int			ft_atoi(const char *str)
 
 	letter = 0;
 	number = 0;
-	while (ft_isblank(str[letter]))
+	while (ft_isinvisible(str[letter]))
 		letter++;
 	sign = ft_test_sign(&str[letter]);
 	if (!sign)
