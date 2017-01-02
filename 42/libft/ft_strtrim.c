@@ -6,7 +6,7 @@
 /*   By: vpetit <vpetit@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/27 17:58:09 by vpetit            #+#    #+#             */
-/*   Updated: 2016/12/28 10:55:34 by vpetit           ###   ########.fr       */
+/*   Updated: 2017/01/02 21:28:29 by vpetit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ char	*ft_strtrim(char const *s)
 	char	*fresh;
 
 	start = 0;
-	end = ft_strlen(s) - 1;
-	if (s == NULL)
+	if (!s)
 		return (NULL);
+	end = ft_strlen(s) - 1;
 	while (s[start] == ' ' || s[start] == '\n' || s[start] == '\t')
 		start++;
 	if (end == 0 || start == end + 1)

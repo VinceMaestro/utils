@@ -6,7 +6,7 @@
 /*   By: vpetit <vpetit@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/21 20:31:30 by vpetit            #+#    #+#             */
-/*   Updated: 2016/12/21 22:40:13 by vpetit           ###   ########.fr       */
+/*   Updated: 2017/01/02 21:26:17 by vpetit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,18 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	unsigned int	len_s2;
 	char			*new;
 
-	len_s1 = ft_strlen(s1);
-	len_s2 = ft_strlen(s2);
-	new = (char*)malloc(sizeof(*new) * (len_s1 + len_s2 + 1));
-	if (new)
+	if (s1 && s2)
 	{
-		ft_strcpy(new, s1);
-		ft_strcpy(&(new[len_s1]), s2);
-		new[len_s1 + len_s2] = '\0';
+		len_s1 = ft_strlen(s1);
+		len_s2 = ft_strlen(s2);
+		new = (char*)malloc(sizeof(*new) * (len_s1 + len_s2 + 1));
+		if (new && s1 && s2)
+		{
+			ft_strcpy(new, s1);
+			ft_strcpy(&(new[len_s1]), s2);
+			new[len_s1 + len_s2] = '\0';
+		}
+		return (new);
 	}
-	return (new);
+	return (NULL);
 }

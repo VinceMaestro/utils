@@ -6,7 +6,7 @@
 /*   By: vpetit <vpetit@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/21 20:30:45 by vpetit            #+#    #+#             */
-/*   Updated: 2016/12/31 19:10:50 by vpetit           ###   ########.fr       */
+/*   Updated: 2017/01/02 21:34:04 by vpetit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,10 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	unsigned int	i;
 	char			*buff;
 
-	buff = (char*)malloc(sizeof(*buff) * (ft_strlen(s) + 1));
 	i = 0;
 	if (s && f)
 	{
+		buff = (char*)malloc(sizeof(*buff) * (ft_strlen(s) + 1));
 		if (buff)
 		{
 			while (s[i])
@@ -31,5 +31,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 			buff[i] = '\0';
 		}
 	}
+	else
+		return (NULL);
 	return (buff);
 }

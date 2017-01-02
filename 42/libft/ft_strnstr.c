@@ -6,7 +6,7 @@
 /*   By: vpetit <vpetit@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/21 18:54:16 by vpetit            #+#    #+#             */
-/*   Updated: 2016/12/31 18:39:40 by vpetit           ###   ########.fr       */
+/*   Updated: 2017/01/02 21:44:02 by vpetit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,17 +20,20 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	size_t	len_little;
 
 	i = 0;
-	len_big = ft_strlen(big);
-	len_little = ft_strlen(little);
-	if (!*little)
-		return ((char*)big);
-	if (len_big >= len_little)
+	if (len)
 	{
-		while (i <= len_big - len_little && i <= len - len_little)
+		len_big = ft_strlen(big);
+		len_little = ft_strlen(little);
+		if (!little)
+			return ((char*)big);
+		if (len_big >= len_little)
 		{
-			if (!ft_memcmp(&big[i], little, len_little))
-				return ((char*)&big[i]);
-			i++;
+			while (i <= len_big - len_little && i <= len - len_little)
+			{
+				if (!ft_memcmp(&big[i], little, len_little))
+					return ((char*)&big[i]);
+				i++;
+			}
 		}
 	}
 	return (NULL);
