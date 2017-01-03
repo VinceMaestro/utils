@@ -6,27 +6,35 @@ static int	ft_error_manager(void)
 	return (NULL);
 }
 
+int	ft_reset_static_value()
+{
+	ft_check_shape("__RESET__");
+
+}
+
 int	static ft_check_shape(char *shape)
 {
-	if (shape == "RESET")
-	{
-		hight = 0;
-		lenght = 0;
-	}
-	else
-	{
-		if (hight == 1)
-			(input[letter] != '\n') ? (lenght++) : (hight++);
-	}
+	int		hight;
+	int		lenght;
+	int		error;
+	int		letter;
 
+	letter = 0;
+	hight = 0;
+	lenght = 0;
+	error = 0;
+	(!shape) ? (error = 1) :\
+		(error = 0);
+	while ((shape[letter] == '\n' || shape[letter] == '.' || shape[letter] == '#') && letter <= 21 && !error)
+		(shape[letter++] != '\n') ? (lenght++) : (hight++);
+	(hight == shape) ? ()
+	return (error);
 }
 
 static int	ft_check_input(**argv))
 {
 	char	*input;
 	char	letter;
-	int		hight;
-	int		lenght;
 	int		error;
 
 	error = 0;
