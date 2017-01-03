@@ -1,27 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sqrt.c                                          :+:      :+:    :+:   */
+/*   ft_count_if.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vpetit <vpetit@student.42.fr>              +#+  +:+       +#+        */
+/*   By: vpetit <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/07 19:57:17 by vpetit            #+#    #+#             */
-/*   Updated: 2016/12/31 11:15:15 by vpetit           ###   ########.fr       */
+/*   Created: 2016/11/16 22:45:00 by vpetit            #+#    #+#             */
+/*   Updated: 2016/11/16 23:30:05 by vpetit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-int		ft_sqrt(int nb)
+int		ft_count_if(char **tab, int (*f)(char*))
 {
-	int		a;
+	int		cpt;
+	int		index;
 
-	a = 0;
-	if (nb < 0)
-		return (0);
-	while (a * a < nb)
-		a += 1;
-	if (a * a == nb)
-		return (a);
-	return (0);
+	index = 0;
+	cpt = 0;
+	while (tab[index] != 0)
+	{
+		if ((f(tab[index])) == 1)
+		{
+			cpt += 1;
+		}
+		index += 1;
+	}
+	return (cpt);
 }

@@ -6,23 +6,63 @@
 /*   By: vpetit <vpetit@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/11 19:26:37 by vpetit            #+#    #+#             */
-/*   Updated: 2016/12/11 20:06:30 by vpetit           ###   ########.fr       */
+/*   Updated: 2017/01/03 12:16:01 by vpetit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
 
-int	main()
+//gcc ft_atoi.c ft_isdigit.c ft_isinvisible.c main_ft_atoi.c
+
+#define RANDT	512
+int	main(void)
 {
-	int val;
-	char	str[] = "98a993489";
-	char	str2[] = "Hello World!";
+	size_t		i;
+	size_t		j;
+	char		str[12] = {0};
+	int			rand_char;
 
-	val = ft_atoi(str);
-	printf("String value = %s, Int value = %d\n", str, val);
-
-	val = ft_atoi(str2);
-	printf("String value = %s, Int value = %d\n", str2, val);
-	return (0);
+	if (atoi("\n\v\t\r\f -123") != ft_atoi("\n\v\t\r\f -123"))
+		printf("test 1 FAIL !\n");
+	if (atoi("12-3") != ft_atoi("12-3"))
+		printf("test 2 FAIL !\n");
+	if (atoi("-+123") != ft_atoi("-+123"))
+		printf("test 3 FAIL !\n");
+	if (atoi("a123") != ft_atoi("a123"))
+		printf("test 4 FAIL !\n");
+	if (atoi("123a") != ft_atoi("123a"))
+		printf("test 5 FAIL !\n");
+	if (atoi("123") != ft_atoi("123"))
+		printf("test 6 FAIL !\n");
+	if (atoi("-123") != ft_atoi("-123"))
+		printf("test 7 FAIL !\n");
+	if (atoi("+123") != ft_atoi("+123"))
+		printf("test 8 FAIL !\n");
+	if (atoi(" - 123") != ft_atoi(" - 123"))
+		printf("test 9 FAIL !\n");
+	if (atoi("\t -123") != ft_atoi("\t -123"))
+		printf("test 10 FAIL !\n");
+	if (atoi("-2147483648") != ft_atoi("-2147483648"))
+		printf("test 11 FAIL !\n");
+	if (atoi("2147483647") != ft_atoi("2147483647"))
+		printf("test 12 FAIL !\n");
+	if (atoi("") != ft_atoi(""))
+		printf("test 13 FAIL !\n");
+	i = 0;
+	while (i < RANDT)
+	{
+		j = 0;
+		while (j < 10)
+		{
+			rand_char = (rand() % 10) + '0';
+			str[j] = ((char)rand_char);
+			j++;
+		}
+		str[11] = 0;
+		if (atoi(str) != ft_atoi(str))
+			printf("STR IS :  %s  REAL ATOI RETURN :  %d  MINE :  %d\n", str, atoi(str), ft_atoi(str));
+		i++;
+	}
+	return (1);
 }

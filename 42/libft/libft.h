@@ -6,7 +6,7 @@
 /*   By: vpetit <vpetit@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/22 17:07:18 by vpetit            #+#    #+#             */
-/*   Updated: 2016/12/31 17:40:26 by vpetit           ###   ########.fr       */
+/*   Updated: 2017/01/03 12:45:06 by vpetit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,5 +88,7 @@ char		**ft_strsplit(char const *s, char c);
 char		*ft_itoa(int n);
 int			ft_isblank(int c);
 int			ft_isinvisible(int c);
+void		ft_foreach(int *tab, int lenght, void (*f)(int));
+int			ft_count_if(char **tab, int (*f)(char*));
 
 #endif

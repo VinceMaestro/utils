@@ -6,7 +6,7 @@
 #    By: vpetit <vpetit@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/18 21:24:23 by vpetit            #+#    #+#              #
-#    Updated: 2016/12/31 16:52:37 by vpetit           ###   ########.fr        #
+#    Updated: 2017/01/03 12:49:26 by vpetit           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,7 +47,6 @@ SRC = ft_atoi \
 		ft_putstr \
 		ft_putstr_fd \
 		ft_range \
-		ft_sqrt \
 		ft_strcat \
 		ft_strchr \
 		ft_strclr \
@@ -77,7 +76,9 @@ SRC = ft_atoi \
 		ft_tolower \
 		ft_toupper \
 		ft_isblank \
-		ft_isinvisible
+		ft_isinvisible \
+		ft_foreach \
+		ft_count_if
 
 INCL = libft
 
