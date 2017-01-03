@@ -6,7 +6,7 @@
 /*   By: vpetit <vpetit@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/11 19:26:37 by vpetit            #+#    #+#             */
-/*   Updated: 2017/01/03 12:16:01 by vpetit           ###   ########.fr       */
+/*   Updated: 2017/01/03 16:21:22 by vpetit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,7 @@ int	main(void)
 	if (atoi("") != ft_atoi(""))
 		printf("test 13 FAIL !\n");
 	i = 0;
+	// unsigned long long okok(18446744073709551615);
 	while (i < RANDT)
 	{
 		j = 0;
@@ -63,6 +64,7 @@ int	main(void)
 		if (atoi(str) != ft_atoi(str))
 			printf("STR IS :  %s  REAL ATOI RETURN :  %d  MINE :  %d\n", str, atoi(str), ft_atoi(str));
 		i++;
+		printf("STR IS :  %s  REAL ATOI RETURN :  %d  MINE :  %d\n", "18446744073709551615", atoi("18446744073709551615"), ft_atoi("18446744073709551615"));
 	}
 	return (1);
 }
