@@ -1,25 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_min.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vpetit <vpetit@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/12/08 19:24:58 by vpetit            #+#    #+#             */
-/*   Updated: 2017/01/04 00:40:50 by vpetit           ###   ########.fr       */
+/*   Created: 2017/01/04 05:45:10 by vpetit            #+#    #+#             */
+/*   Updated: 2017/01/04 05:48:08 by vpetit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(char const *s, int c)
+size_t	ft_min(size_t a, size_t b)
 {
-	if (*s && *s == c)
-		return (ft_strrchr(s + 1, c) ? ft_strrchr(s + 1, c) : (char*)s);
-	else if (*s)
-		return (ft_strrchr(s + 1, c));
-	else if (*s == c)
-		return ((char*)s);
-	else
-		return (NULL);
+	return ((a <= b) ? (a) : (b));
 }

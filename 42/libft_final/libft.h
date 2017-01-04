@@ -6,15 +6,13 @@
 /*   By: vpetit <vpetit@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/22 17:07:18 by vpetit            #+#    #+#             */
-/*   Updated: 2017/01/03 17:05:36 by vpetit           ###   ########.fr       */
+/*   Updated: 2017/01/04 05:48:48 by vpetit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# include <unistd.h>
-# include <stdlib.h>
 # include <string.h>
 
 typedef struct s_list	t_list;
@@ -39,9 +37,9 @@ char		*ft_strcpy(char *dst, char const *src);
 char		*ft_strncpy(char *dst, char const *src, size_t len);
 size_t		ft_strlen(const char *str);
 void		ft_putstr(void *str);
-char		*ft_strcat(char *restrict s1, const char *restrict s2);
-char		*ft_strncat(char *restrict s1, const char *restrict s2, size_t n);
-size_t		ft_strlcat(char *restrict dst, const char *restrict src,
+char		*ft_strcat(char *s1, const char *s2);
+char		*ft_strncat(char *s1, const char *s2, size_t n);
+size_t		ft_strlcat(char *dst, const char *src,
 				size_t size);
 char		*ft_strchr(const char *s, int c);
 char		*ft_strrchr(const char *s, int c);
@@ -90,5 +88,7 @@ int			ft_isblank(int c);
 int			ft_isinvisible(int c);
 void		ft_foreach(int *tab, int lenght, void (*f)(int));
 int			ft_count_if(char **tab, int (*f)(char*));
+size_t		ft_min(size_t a, size_t b);
+size_t		ft_max(size_t a, size_t b);
 
 #endif

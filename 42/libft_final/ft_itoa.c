@@ -6,11 +6,12 @@
 /*   By: vpetit <vpetit@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/21 20:32:06 by vpetit            #+#    #+#             */
-/*   Updated: 2017/01/03 17:02:46 by vpetit           ###   ########.fr       */
+/*   Updated: 2017/01/04 00:56:42 by vpetit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
 static int	ft_int_len(int n, int len)
 {

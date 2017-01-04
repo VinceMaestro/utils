@@ -6,22 +6,26 @@
 /*   By: vpetit <vpetit@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/07 16:55:31 by vpetit            #+#    #+#             */
-/*   Updated: 2017/01/03 17:03:44 by vpetit           ###   ########.fr       */
+/*   Updated: 2017/01/04 01:06:15 by vpetit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <unistd.h>
 
 void	ft_putstr(void *str)
 {
 	char	*buff;
 	int		i;
 
-	buff = str;
-	i = 0;
-	while (buff[i])
+	if (str)
 	{
-		write(1, &(buff[i]), 1);
-		i += 1;
+		buff = str;
+		i = 0;
+		while (buff[i])
+		{
+			write(1, &(buff[i]), 1);
+			i += 1;
+		}
 	}
 }

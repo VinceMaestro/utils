@@ -6,21 +6,25 @@
 /*   By: vpetit <vpetit@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/19 17:32:11 by vpetit            #+#    #+#             */
-/*   Updated: 2017/01/03 17:03:30 by vpetit           ###   ########.fr       */
+/*   Updated: 2017/01/04 01:04:19 by vpetit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <unistd.h>
 
 void	ft_putendl_fd(char const *s, int fd)
 {
 	int i;
 
-	i = 0;
-	while (s[i] != '\0')
+	if (s && fd)
 	{
-		write(fd, &s[i], 1);
-		i++;
+		i = 0;
+		while (s[i] != '\0')
+		{
+			write(fd, &s[i], 1);
+			i++;
+		}
+		write(fd, "\n", 1);
 	}
-	write(fd, "\n", 1);
 }

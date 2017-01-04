@@ -6,11 +6,12 @@
 /*   By: vpetit <vpetit@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/27 17:58:09 by vpetit            #+#    #+#             */
-/*   Updated: 2017/01/03 17:05:25 by vpetit           ###   ########.fr       */
+/*   Updated: 2017/01/04 00:59:46 by vpetit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
 char	*ft_strtrim(char const *s)
 {

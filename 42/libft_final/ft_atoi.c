@@ -6,7 +6,7 @@
 /*   By: vpetit <vpetit@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/11 18:35:09 by vpetit            #+#    #+#             */
-/*   Updated: 2017/01/03 17:02:03 by vpetit           ###   ########.fr       */
+/*   Updated: 2017/01/03 21:08:24 by vpetit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,17 @@ static int	ft_test_sign(const char *str)
 	return (sign);
 }
 
+static int	ft_check_len(unsigned long number, char letter, int sign)
+{
+	if (sign == -1 && (number * 10 + letter - 48 > \
+		(unsigned long)9223372036854775807))
+		return (0);
+	else if (sign == 1 && (number * 10 + letter - 48 > \
+		(unsigned long)9223372036854775806))
+		return (-1);
+	return (42);
+}
+
 int			ft_atoi(const char *str)
 {
 	int			letter;
@@ -57,6 +68,8 @@ int			ft_atoi(const char *str)
 	letter = letter + ft_test_letter(&str[letter]);
 	while (str[letter] && ft_isdigit(str[letter]))
 	{
+		if (ft_check_len(number, str[letter], sign) != 42)
+			return (ft_check_len(number, str[letter], sign));
 		number = number * 10 + str[letter] - 48;
 		letter++;
 	}

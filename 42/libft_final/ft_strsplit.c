@@ -6,11 +6,12 @@
 /*   By: vpetit <vpetit@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/21 20:31:51 by vpetit            #+#    #+#             */
-/*   Updated: 2017/01/03 17:05:05 by vpetit           ###   ########.fr       */
+/*   Updated: 2017/01/04 00:59:09 by vpetit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
 static int	ft_number_words(char const *s, char c)
 {

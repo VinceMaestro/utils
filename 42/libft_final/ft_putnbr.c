@@ -6,11 +6,12 @@
 /*   By: vpetit <vpetit@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/23 18:00:23 by vpetit            #+#    #+#             */
-/*   Updated: 2017/01/03 17:03:38 by vpetit           ###   ########.fr       */
+/*   Updated: 2017/01/04 01:05:51 by vpetit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <unistd.h>
 
 static int	ft_putnbr_neg(long int nbr)
 {

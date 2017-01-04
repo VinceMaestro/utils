@@ -6,7 +6,7 @@
 /*   By: vpetit <vpetit@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/20 16:23:22 by vpetit            #+#    #+#             */
-/*   Updated: 2017/01/03 17:02:57 by vpetit           ###   ########.fr       */
+/*   Updated: 2017/01/04 01:28:35 by vpetit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,13 @@
 
 void		ft_lstiter(t_list *lst, void (*f)(t_list *elem))
 {
-	if (lst->next)
-		ft_lstiter(lst->next, f);
-	f(lst);
+	if (lst && f)
+	{
+		f(lst);
+		while (lst->next)
+		{
+			lst = lst->next;
+			f(lst);
+		}
+	}
 }

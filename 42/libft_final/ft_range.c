@@ -6,11 +6,12 @@
 /*   By: vpetit <vpetit@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/15 21:17:59 by vpetit            #+#    #+#             */
-/*   Updated: 2017/01/03 17:03:54 by vpetit           ###   ########.fr       */
+/*   Updated: 2017/01/04 00:57:42 by vpetit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
 int		*ft_range(int min, int max)
 {
