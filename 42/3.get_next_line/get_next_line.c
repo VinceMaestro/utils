@@ -6,7 +6,7 @@
 /*   By: vpetit <vpetit@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/04 07:16:02 by vpetit            #+#    #+#             */
-/*   Updated: 2017/01/04 18:03:50 by vpetit           ###   ########.fr       */
+/*   Updated: 2017/01/05 17:29:02 by vpetit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,30 @@ int	get_next_line(const int fd, char **line)
 	while (!(reader->content_size = ft_max((size_t)(ft_memchr(buff, '\n', BUFF_SIZE) - reader->content), 0)))
 	{
 		read(fd, buff, BUFF_SIZE));
-		reader->content = ft_strjoin(reader->content, (buff, )[0]  ft_memchr(buff, '\n', BUFF_SIZE))) 
+		reader->content = ft_strjoin(reader->content, (buff, )[0]  ft_memchr(buff, '\n', BUFF_SIZE)))
 	}
+}
+
+int	get_next_line(const int fd, char **line)
+{
+	char	*buff;
+	char	*end;
+	size_t	*reader;
+
+	if (!fd || !line || BUFF_SIZE < 1)
+		return (-1);
+	reader = 1;
+	buff = ft_memalloc(BUFF_SIZE);
+	while (reader = read(fd, buff, BUFF_SIZE) && !(end = ft_memchr(buff, '\n', BUFF_SIZE)))
+	{
+		ft_putstr(buff);
+		reader = read(fd, buff, BUFF_SIZE);
+	}
+	fd = (fd + BUFF_SIZE - (buff + end));
 
 
+
+	return (0);
 }
 
 //sanitizer adress
