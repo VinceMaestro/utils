@@ -34,19 +34,20 @@ static void	*ft_memincr(void *src, size_t new_size)
 {
 	void	*buff;
 
-	buff = (void*)malloc(sizeof(void) * new_size);
-	if (!buff)
-		return (NULL);
-	ft_bzero(buff, new_size);
-	if (*src)
-		ft_memcpy(buff, src, new_size);
-	ft_memdel(&src);
+	buff = (void*)malloc(sizeof(void) * (new_size + 1));
+	if (buff)
+	{
+		ft_bzero(buff, new_size + 1);
+		if (*src)
+			ft_memcpy(buff, src, new_size);
+		ft_memdel(&src);
+	}
 	return (buff);
 }
 
-static void	*ft_lstfd(gnl_list *lst_fd, int fd)
+static void	*ft_lstfd(t_gnl_list *lst_fd, int fd)
 {
-	gnl_list	*new;
+	t_gnl_list	*new;
 
 	if (lst_fd)
 	{
@@ -55,7 +56,7 @@ static void	*ft_lstfd(gnl_list *lst_fd, int fd)
 		if (lst_fd->fd == fd)
 			return (lst_fd);
 	}
-	new = (gnl_list*)malloc(sizeof(gnl_list));
+	new = (t_gnl_list*)malloc(sizeof(t_gnl_list));
 	if (new)
 	{
 		((lst_fd) ? (lst_fd->next = new));
@@ -67,39 +68,38 @@ static void	*ft_lstfd(gnl_list *lst_fd, int fd)
 	return (new);
 }
 
+static void	ft_init_gnl(t_gnl_list *fd_lst, int fd, t_gnl *s)
+{
+	s->reader = BUFF_SIZE;
+	s->ptr_lst = ft_lstfd(*fd_lst, fd);
+	s->str = ptr_lst->content;
+	s->len_str = &(ptr_lst->content_size);
+	s->end = ft_memchr(s->str, '\n', *(s->len_str));
+}
+
 int			get_next_line(const int fd, char **line)
 {
-	char				*str;
-	char				*end;
-	size_t				*reader;
-	static gnl_list		**fd_lst;
-	gnl_list			*ptr_lst;
-	int					*len_str;
+	static t_gnl_list	**fd_lst;
+	t_gnl				s;
 
-	fd_lst = (gnl_list**)malloc(sizeof(gnl_list*));
 	if (!fd || !line || BUFF_SIZE < 1)
 		return (-1);
-	reader = 1;
-	end = NULL;
-	ptr_lst = ft_lstfd(*fd_lst, fd);
-	str = ptr_lst->content;
-	len_str = &(ptr_lst->content_size);
-	end = ft_memchr(str, '\n', *len_str);
-	while (reader && !end && str)
+	if (!fd_lst)
+		fd_lst = (t_gnl_list**)malloc(sizeof(t_gnl_list*));
+	ft_init_gnl(*fd_lst, fd, &s);
+	while (s.reader == BUFF_SIZE && !s.end)
 	{
-		str = ft_memincr(str, *len_str += BUFF_SIZE);
-		reader = read(fd, &str[*len_str - BUFF_SIZE], BUFF_SIZE);
-		end = ft_memchr(str, '\n', *len_str);
+		s.str = ft_memincr(s.str, *(s.len_str) += BUFF_SIZE);
+		if (!s.str)
+			return (-1);
+		s.reader = read(fd, &s.str[*(s.len_str) - BUFF_SIZE], BUFF_SIZE);
+		s.end = ft_memchr(s.str, '\n', *(s.len_str));
 	}
-	if (end)
-		str = ft_memincr(str, *len_str + (end - str));
-	else
-		str = ft_memincr(str, ft_strlen(str) + BUFF_SIZE);
+	((s.end) ? (s.str = ft_memincr(s.str, *(s.len_str) + (s.end - s.str)))
+		: (s.str = ft_memincr(s.str, *(s.len_str) + reader)));
+	//ft_strlcat(s.str, s.str + s.end, s.end - s.str);
 
-
-	ft_memdel(&(ptr_lst->content));
-	ft_strlcat(ptr_lst->content, str + end, end - str);
-	*line = str;
+	*line = s.str;
 	return (1);
 }
 

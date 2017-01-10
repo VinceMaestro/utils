@@ -15,9 +15,10 @@
 
 # include "./libft/libft.h"
 
-typedef struct get_next_line_list	gnl_list
+typedef struct s_get_next_line_list	t_gnl_list
+typedef struct s_struct_gnl			t_gnl
 
-struct	get_next_line_list
+struct	s_get_next_line_list
 {
 	void		*content;
 	size_t		content_size;
@@ -25,6 +26,16 @@ struct	get_next_line_list
 	gnl_list	next_fd;
 
 };
+
+struct	s_struct_gnl
+{
+	char				*str;
+	char				*end;
+	size_t				*reader;
+	gnl_list			*ptr_lst;
+	int					*len_str;
+}
+
 
 # ifndef BUFF_SIZE
 #  define BUFF_SIZE 32
