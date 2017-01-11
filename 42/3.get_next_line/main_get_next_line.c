@@ -6,7 +6,7 @@
 /*   By: vpetit <vpetit@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/05 18:25:36 by vpetit            #+#    #+#             */
-/*   Updated: 2017/01/10 16:18:43 by vpetit           ###   ########.fr       */
+/*   Updated: 2017/01/11 13:35:09 by vpetit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 #include <sys/uio.h>
 #include <unistd.h>
 #include <fcntl.h>
+#include <stdio.h>
 
 void	ft_putstr_fd(char const *s, int fd)
 {
@@ -48,7 +49,7 @@ int		ft_display_file(char *argv)
 	if (line)
 	{
 		ft_putnbr(get_next_line(open_fd, line));
-		ft_putstr(*line);
+		printf("final line is : \n%s\n", *line);
 	}
 	if (close(open_fd) == -1)
 	{
