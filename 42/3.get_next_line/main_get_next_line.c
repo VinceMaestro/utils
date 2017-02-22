@@ -6,35 +6,16 @@
 /*   By: vpetit <vpetit@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/05 18:25:36 by vpetit            #+#    #+#             */
-/*   Updated: 2017/01/11 13:35:09 by vpetit           ###   ########.fr       */
+/*   Updated: 2017/02/22 18:31:43 by vpetit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
-
-#include <sys/types.h>
-#include <sys/stat.h>
-#include <sys/uio.h>
 #include <unistd.h>
 #include <fcntl.h>
 #include <stdio.h>
 
-void	ft_putstr_fd(char const *s, int fd)
-{
-	int i;
-
-	if (s && fd)
-	{
-		i = 0;
-		while (s[i] != '\0')
-		{
-			write(fd, &s[i], 1);
-			i++;
-		}
-	}
-}
-
-int		ft_display_file(char *argv)
+static int	ft_display_file(char *argv)
 {
 	int		open_fd;
 	char	**line;
@@ -59,7 +40,7 @@ int		ft_display_file(char *argv)
 	return (0);
 }
 
-int		main(int argc, char **argv)
+int			main(int argc, char **argv)
 {
 	if (argc == 1)
 	{
