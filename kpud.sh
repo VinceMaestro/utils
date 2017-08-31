@@ -1,4 +1,10 @@
 read -p 'quels PIDs ? - ' PIDs;
-echo "\nEnding ... \n";
+echo "Ending ... ";
 kill -s HUP $PIDs;
-echo "Done\n";
+status="$?"
+echo "Exit Status : $status";
+if [ "$status" = 0 ]; then
+	echo "Done";
+else
+	echo "Ending process fail"
+fi
