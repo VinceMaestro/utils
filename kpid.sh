@@ -5,8 +5,7 @@ if [ "$nbr_arg" == 0 ]; then
 else
 	pIDs="$@"
 fi
-echo "$pIDs"
-echo "Ending ... ";
+echo "Ending pIDs: $pIDs ";
 kill -s HUP $pIDs;
 status="$?"
 echo "Exit Status : $status";
