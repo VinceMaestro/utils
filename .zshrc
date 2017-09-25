@@ -71,7 +71,9 @@ alias grafa='cd /usr/local/Cellar/grafana/4.1.1/share/grafana; ../../bin/grafana
 
 CDPATH=~/prog
 
-hi
+if whence hi >/dev/null; then
+	hi
+fi
 
 # Functions
 function stalk() {
