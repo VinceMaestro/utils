@@ -51,6 +51,7 @@ zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 alias 42fc='bash ~/prog/git/utils/42/42FileChecker/42FileChecker.sh'
 alias spot='~/prog/git/utils/spot.sh'
 alias kpid='~/prog/git/utils/kpid.sh'
+alias lks='~/prog/git/utils/lks.sh'
 alias src='source ~/.zshrc'
 #docker
 alias d='docker'
