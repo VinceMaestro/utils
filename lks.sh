@@ -6,5 +6,5 @@ else
 fi
 for i in `seq 1 36000`
 do
-	leaks $exe
+	leaks `pgrep $exe`
 done
