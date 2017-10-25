@@ -81,6 +81,7 @@ alias ga='git add'
 alias gc='git commit'
 alias gp='git push'
 alias gs='git status'
+alias om='origin master'
 alias grf='git checkout master && git fetch upstream && git rebase upstream/master && git checkout dev && git rebase upstream/dev'
 #alias open='xdg-open'
 
