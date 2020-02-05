@@ -49,10 +49,15 @@ zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
 #utils
 alias 42fc='bash ~/prog/git/utils/42/42FileChecker/42FileChecker.sh'
+alias ng='./node_modules/@angular/cli/bin/ng'
+alias sass='node ./node_modules/sass/sass.js'
 alias spot='~/prog/git/utils/spot.sh'
 alias kpid='~/prog/git/utils/kpid.sh'
 alias lks='~/prog/git/utils/lks.sh'
 alias src='source ~/.zshrc'
+alias brew='/usr/local/Homebrew/bin/brew'
+alias mongo='/usr/local/Cellar/mongodb/4.0.3_1/bin/mongo'
+alias mongod='/usr/local/Cellar/mongodb/4.0.3_1/bin/mongod'
 #docker
 alias d='docker'
 alias ds='docker service'
@@ -73,7 +78,7 @@ alias ls='ls -la'
 alias v='vim'
 alias cfbd='norminette -R CheckForbiddenSourceHeader'
 #other
-alias hi='fortune | cowsay | lolcat'
+alias hi='print Hello and welcome!'
 alias grafa='cd /usr/local/Cellar/grafana/4.1.1/share/grafana; ../../bin/grafana-server'
 #git
 alias g='git'
@@ -90,6 +95,8 @@ alias grf='git checkout master && git fetch upstream && git rebase upstream/mast
 #alias Ariel='ssh -p 6666 109.16.254.135'
 
 CDPATH=~/prog
+
+export PATH=$PATH:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin
 
 if whence hi >/dev/null; then
 	hi
