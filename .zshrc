@@ -1,6 +1,22 @@
+# Find and set branch name var if in git repository.
+function git_branch_name()
+{
+  branch=$(git symbolic-ref HEAD 2> /dev/null | awk 'BEGIN{FS="/"} {print $NF}')
+  if [[ $branch == "" ]];
+  then
+    :
+  else
+    echo ' - ('$branch')'
+  fi
+}
+
+# Enable substitution in the prompt.
+setopt prompt_subst
+
 # Set up the prompt
 autoload -U colors && colors
-PS1="%{$fg_bold[yellow]%}[%{$fg_no_bold[red]%}%w - %*%{$fg_bold[yellow]%}] %{$fg_bold[cyan]%}%n%{$fg_bold[yellow]%} on %{$fg_bold[grey]%}%m%{$fg_bold[yellow]%} in %{$fg_no_bold[green]%}%~%{$fg_bold[yellow]%} \`|> %{$fg_no_bold[white]%}"
+
+PS1='%{$fg_bold[yellow]%}[%{$fg_no_bold[red]%}%w - %*%{$fg_bold[yellow]%}] %{$fg_bold[cyan]%}%n%{$fg_bold[blue]%}$(git_branch_name)%{$fg_bold[yellow]%} in %{$fg_no_bold[green]%}%~%{$fg_bold[yellow]%} \`|> %{$fg_no_bold[white]%}'
 
 setopt histignorealldups sharehistory
 
@@ -58,6 +74,7 @@ alias src='source ~/.zshrc'
 alias brew='/usr/local/Homebrew/bin/brew'
 alias mongo='/usr/local/Cellar/mongodb/4.0.3_1/bin/mongo'
 alias mongod='/usr/local/Cellar/mongodb/4.0.3_1/bin/mongod'
+alias code='open -a Visual\ Studio\ Code'
 #docker
 alias d='docker'
 alias ds='docker service'
