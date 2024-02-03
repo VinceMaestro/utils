@@ -113,7 +113,7 @@ alias grf='git checkout master && git fetch upstream && git rebase upstream/mast
 
 CDPATH=~/prog
 
-export PATH=$PATH:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin
+export PATH=$PATH:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/Users/Mads/Library/Python/3.9/bin
 
 if whence hi >/dev/null; then
 	hi
